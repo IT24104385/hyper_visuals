@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, Star, ArrowRight, Instagram, Mail } from "lucide-react";
+import { Star, ArrowRight, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 
 // --- Components ---
@@ -54,7 +54,7 @@ const Hero = () => {
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-xl md:text-2xl text-gray-300 mb-8 font-light"
+                    className="text-xl md:text-2xl text-gray-200 mb-8 font-light"
                 >
                     Premium Event Videography & Photography
                 </motion.p>
@@ -93,22 +93,22 @@ const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                     className="space-y-6"
                 >
-                    <h2 className="text-4xl font-bold mb-4">About Hyper Visuals</h2>
-                    <p className="text-gray-700 text-lg">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">About Hyper Visuals</h2>
+                    <p className="text-gray-800 text-lg">
                         Hyper Visuals is a full-stack event media production company delivering high-impact
                         photography, videography, and cinematic storytelling. We specialize in capturing live
                         events at scale—concerts, festivals, corporate activations, and private showcases—
                         transforming moments into premium visual assets that drive brand value and audience
                         engagement.
                     </p>
-                    <p className="text-gray-700 text-lg">
+                    <p className="text-gray-800 text-lg">
                         Our workflow is production-grade from pre-event planning to post-production delivery. We
                         operate with professional cinema cameras, dynamic lighting control, multi-angle coverage,
                         and narrative-driven editing to ensure every frame aligns with the client&apos;s brand
                         positioning. The output is clean, intentional, and optimized for digital distribution,
                         social media, and long-term archival use.
                     </p>
-                    <p className="text-gray-700 text-lg">
+                    <p className="text-gray-800 text-lg">
                         Hyper Visuals doesn&apos;t just document events—we package experiences. We focus on
                         clarity, emotion, and momentum, delivering visuals that cut through noise, scale across
                         platforms, and leave a lasting impression. In short: we execute, elevate, and deliver
@@ -132,7 +132,7 @@ const GallerySection = () => {
         <section id="work" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-16">
-                    <h2 className="text-4xl font-bold mb-4">Selected Works</h2>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">Selected Works</h2>
                     <div className="w-20 h-1 bg-hyper-blue"></div>
                 </div>
 
@@ -168,33 +168,73 @@ const GallerySection = () => {
 };
 
 const TeamSection = () => {
+    // To update team members, edit the array below.
+    // 1. Add your images to the `public/team` folder.
+    // 2. Update the `imageSrc` path for each member.
+    // 3. For best results, use portrait images with a 4:5 aspect ratio (e.g., 800x1000px).
+    const teamMembers = [
+        {
+            name: "Rayon Senuka",
+            role: "Creative Director",
+            description: "Overseeing creative vision and ensuring brand consistency.",
+            imageSrc: "/team/team-1.jpg"
+        },
+        {
+            name: "Senuka Rosa",
+            role: "Lead Photographer",
+            description: "Capturing candid moments and stunning visual narratives.",
+            imageSrc: "/team/team-2.jpg"
+        },
+        {
+            name: "Minusha Chalindu",
+            role: "Lead Videographer",
+            description: "Specializing in cinematic edits and high-energy event coverage.",
+            imageSrc: "/team/team-3.jpg"
+        },
+
+        {
+            name: "Kanishka Lanza",
+            role: "Drone Operator",
+            description: "Providing breathtaking aerial shots and dynamic perspectives.",
+            imageSrc: "/team/team-4.jpg"
+        },
+        {
+            name: "Shenal Nethmina",
+            role: "Photographer",
+            description: "Focused on capturing the details and emotions that tell a story.",
+            imageSrc: "/team/team-5.jpg"
+        },
+    ];
+
     return (
         <section id="team" className="py-24 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold mb-4">The Creatives</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">The Creatives</h2>
+                    <p className="text-gray-800 max-w-2xl mx-auto">
                         We are a team of passionate storytellers obsessed with light, composition, and emotion.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[1, 2, 3].map((item) => (
+                    {teamMembers.map((teamMember, index) => (
                         <motion.div
-                            key={item}
+                            key={index}
                             whileHover={{ y: -10 }}
                             className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-shadow"
                         >
                             <div className="w-full h-64 bg-gray-200 rounded-xl mb-6 relative overflow-hidden">
-                                {/* Placeholder for team photo */}
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                                    <Users size={48} />
-                                </div>
+                                <Image
+                                    src={teamMember.imageSrc}
+                                    alt={teamMember.name}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
-                            <h3 className="text-xl font-bold">Creative Name</h3>
-                            <p className="text-hyper-blue font-medium mb-4">Lead Videographer</p>
-                            <p className="text-gray-500 text-sm">
-                                Specializing in cinematic edits and high-energy event coverage.
+                            <h3 className="text-xl font-bold text-gray-900">{teamMember.name}</h3>
+                            <p className="text-gray-800 font-medium mb-4">{teamMember.role}</p>
+                            <p className="text-gray-700 text-sm">
+                                {teamMember.description}
                             </p>
                         </motion.div>
                     ))}
@@ -210,7 +250,7 @@ const Testimonials = () => {
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 className="text-4xl font-bold mb-6">Don't take our word for it.</h2>
-                    <p className="text-gray-400 text-lg mb-8">
+                    <p className="text-gray-300 text-lg mb-8">
                         We've captured over 500+ events across the country. Here is what our clients have to say about the Hyper experience.
                     </p>
                     <div className="flex gap-2 text-hyper-blue mb-2">
@@ -235,7 +275,7 @@ const Testimonials = () => {
                                 <div className="w-10 h-10 rounded-full bg-gray-500" />
                                 <div>
                                     <p className="font-bold">Sarah Jenkins</p>
-                                    <p className="text-sm text-gray-400">Event Manager, Tech Corp</p>
+                                    <p className="text-sm text-gray-300">Event Manager, Tech Corp</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -269,8 +309,8 @@ const ServicesSection = () => {
         <section id="services" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-16 text-center">
-                    <h2 className="text-4xl font-bold mb-4">What We Do</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
+                    <p className="text-gray-800 max-w-2xl mx-auto">
                         From intimate weddings to arena-scale festivals, we design coverage that fits your story,
                         your audience, and your brand.
                     </p>
@@ -286,9 +326,9 @@ const ServicesSection = () => {
                             transition={{ delay: index * 0.1 }}
                             className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-hyper-blue/40 hover:shadow-lg transition-all"
                         >
-                            <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                            <p className="text-gray-600 mb-4">{service.description}</p>
-                            <ul className="space-y-1 text-sm text-gray-500">
+                            <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+                            <p className="text-gray-800 mb-4">{service.description}</p>
+                            <ul className="space-y-1 text-sm text-gray-700">
                                 {service.details.map((item) => (
                                     <li key={item}>• {item}</li>
                                 ))}
@@ -327,8 +367,8 @@ const PackagesSection = () => {
         <section className="py-24 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-16 text-center">
-                    <h2 className="text-4xl font-bold mb-4">Packages</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">Packages</h2>
+                    <p className="text-gray-800 max-w-2xl mx-auto">
                         Every event is different, but these starting points make it easy to understand what
                         working with us looks like.
                     </p>
@@ -350,7 +390,7 @@ const PackagesSection = () => {
                         >
                             <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
                             <p className="text-hyper-blue font-semibold mb-4">{pkg.price}</p>
-                            <p className="text-sm mb-6 text-gray-400 md:text-gray-500">
+                            <p className={`text-sm mb-6 ${index === 1 ? 'text-gray-300' : 'text-gray-800'}`}>
                                 {pkg.description}
                             </p>
                             <ul className="space-y-2 text-sm mb-8">
@@ -384,12 +424,12 @@ const ContactSection = () => {
         <section id="contact" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
                 <div>
-                    <h2 className="text-4xl font-bold mb-4">Ready to capture your event?</h2>
-                    <p className="text-gray-600 mb-6">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to capture your event?</h2>
+                    <p className="text-gray-800 mb-6">
                         Tell us a bit about your event and we&apos;ll get back to you within 24 hours with
                         availability and next steps.
                     </p>
-                    <div className="space-y-2 text-gray-600">
+                    <div className="space-y-2 text-gray-800">
                         <p><span className="font-semibold">Email:</span> hello@hypervisuals.studio</p>
                         <p><span className="font-semibold">Based in:</span> Your City, available worldwide</p>
                     </div>
@@ -398,7 +438,7 @@ const ContactSection = () => {
                 <form className="bg-gray-50 rounded-2xl p-6 md:p-8 space-y-4 shadow-sm">
                     <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-sm font-medium mb-1">Name</label>
+                            <label className="block text-sm font-medium mb-1 text-gray-800">Name</label>
                             <input
                                 type="text"
                                 className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
@@ -406,7 +446,7 @@ const ContactSection = () => {
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium mb-1">Email</label>
+                            <label className="block text-sm font-medium mb-1 text-gray-800">Email</label>
                             <input
                                 type="email"
                                 className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
@@ -415,7 +455,7 @@ const ContactSection = () => {
                         </div>
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-1">Event Type</label>
+                        <label className="block text-sm font-medium mb-1 text-gray-800">Event Type</label>
                         <input
                             type="text"
                             className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
@@ -424,14 +464,14 @@ const ContactSection = () => {
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-sm font-medium mb-1">Date</label>
+                            <label className="block text-sm font-medium mb-1 text-gray-800">Date</label>
                             <input
                                 type="date"
                                 className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium mb-1">Location</label>
+                            <label className="block text-sm font-medium mb-1 text-gray-800">Location</label>
                             <input
                                 type="text"
                                 className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
@@ -440,7 +480,7 @@ const ContactSection = () => {
                         </div>
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-1">Tell us about your event</label>
+                        <label className="block text-sm font-medium mb-1 text-gray-800">Tell us about your event</label>
                         <textarea
                             className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm h-28 resize-none focus:outline-none focus:ring-2 focus:ring-hyper-blue"
                             placeholder="Number of guests, schedule, what kind of content you need..."
@@ -452,7 +492,7 @@ const ContactSection = () => {
                     >
                         Send enquiry (mock)
                     </button>
-                    <p className="text-[11px] text-gray-400">
+                    <p className="text-[11px] text-gray-500">
                         This form is for demo purposes only. Hook it up to your favourite form provider or email
                         service.
                     </p>
@@ -469,10 +509,24 @@ const Footer = () => (
                 <span className="text-hyper-blue">Hyper</span>Visuals
             </div>
             <div className="flex gap-6">
-                <Instagram className="hover:text-hyper-blue cursor-pointer transition-colors" />
-                <Mail className="hover:text-hyper-blue cursor-pointer transition-colors" />
+                <a 
+                    href="https://www.google.com/maps?cid=YOUR_GOOGLE_BUSINESS_CID" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="Visit our Google Business page"
+                    className="hover:text-hyper-blue cursor-pointer transition-colors"
+                >
+                    <MapPin size={24} />
+                </a>
+                <a 
+                    href="mailto:info@hypervisuals.com" 
+                    aria-label="Send us an email"
+                    className="hover:text-hyper-blue cursor-pointer transition-colors"
+                >
+                    <Mail size={24} />
+                </a>
             </div>
-            <div className="text-gray-500 text-sm mt-4 md:mt-0">
+            <div className="text-gray-400 text-sm mt-4 md:mt-0">
                 © 2024 Hyper Visuals. All rights reserved.
             </div>
         </div>
