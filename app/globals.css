@@ -19,8 +19,26 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  
+  /* --- BACKGROUND IMAGE CONFIGURATION --- */
+  
+  /* INSTRUCTIONS:
+     1. Add your image to the 'public' folder (e.g., 'public/site-bg.jpg').
+     2. Update the url() below to match your filename.
+     3. Recommended Size: 1920x1080px (Landscape) or higher resolution.
+     4. If you prefer a solid color, remove the background-image line and set background-color.
+  */
+  background-image: url('/site-bg.jpg'); /* Replace with your local image path */
+  background-color: #f3f4f6; /* Fallback color */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps background still while scrolling */
+  background-repeat: no-repeat;
 }

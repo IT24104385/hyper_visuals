@@ -8,12 +8,12 @@ import Image from "next/image";
 // --- Components ---
 
 const NavBar = () => (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div className="text-2xl font-bold tracking-tight text-black">
                 <span className="text-hyper-blue">Hyper</span>Visuals
             </div>
-            <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <div className="hidden md:flex gap-8 text-sm font-medium text-gray-700">
                 <a href="#about" className="hover:text-hyper-blue transition-colors">About</a>
                 <a href="#work" className="hover:text-hyper-blue transition-colors">Our Work</a>
                 <a href="#services" className="hover:text-hyper-blue transition-colors">Services</a>
@@ -23,7 +23,7 @@ const NavBar = () => (
             </div>
             <a
                 href="#contact"
-                className="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-hyper-blue transition-colors"
+                className="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-hyper-blue hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
                 Book Now
             </a>
@@ -35,7 +35,7 @@ const Hero = () => {
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden bg-hyper-dark text-white">
             {/* Background Video Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/90 z-10" />
             <div className="absolute inset-0 z-0">
                 {/* Replace with your actual showreel video background */}
                 <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center animate-slow-zoom"></div>
@@ -46,7 +46,7 @@ const Hero = () => {
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="text-6xl md:text-8xl font-bold tracking-tighter mb-6"
+                    className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 drop-shadow-2xl"
                 >
                     CAPTURE THE <span className="text-hyper-blue">HYPE.</span>
                 </motion.h1>
@@ -54,7 +54,7 @@ const Hero = () => {
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-xl md:text-2xl text-gray-200 mb-8 font-light"
+                    className="text-xl md:text-2xl text-gray-100 mb-8 font-light drop-shadow-md"
                 >
                     Premium Event Videography & Photography
                 </motion.p>
@@ -62,17 +62,17 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
-                    className="flex gap-4 justify-center"
+                    className="flex flex-col sm:flex-row gap-4 justify-center"
                 >
                     <a
                         href="#work"
-                        className="flex items-center gap-2 bg-hyper-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-hyper-blue transition-all"
+                        className="flex items-center justify-center gap-2 bg-hyper-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-hyper-blue hover:scale-105 transition-all shadow-lg hover:shadow-hyper-blue/50"
                     >
                         View Gallery <ArrowRight size={20} />
                     </a>
                     <a
                         href="#services"
-                        className="flex items-center gap-2 border border-white/40 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-hyper-blue transition-all"
+                        className="flex items-center justify-center gap-2 border border-white/60 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-hyper-blue transition-all"
                     >
                         Our Services
                     </a>
@@ -84,32 +84,32 @@ const Hero = () => {
 
 const AboutSection = () => {
     return (
-        <section id="about" className="py-24 bg-gray-50">
+        <section id="about" className="py-24">
             <div className="max-w-4xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="space-y-6"
+                    className="space-y-6 bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-xl border border-white/50"
                 >
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">About Hyper Visuals</h2>
-                    <p className="text-gray-800 text-lg">
+                    <p className="text-gray-800 text-lg leading-relaxed">
                         Hyper Visuals is a full-stack event media production company delivering high-impact
                         photography, videography, and cinematic storytelling. We specialize in capturing live
                         events at scale—concerts, festivals, corporate activations, and private showcases—
                         transforming moments into premium visual assets that drive brand value and audience
                         engagement.
                     </p>
-                    <p className="text-gray-800 text-lg">
+                    <p className="text-gray-800 text-lg leading-relaxed">
                         Our workflow is production-grade from pre-event planning to post-production delivery. We
                         operate with professional cinema cameras, dynamic lighting control, multi-angle coverage,
-                        and narrative-driven editing to ensure every frame aligns with the client&apos;s brand
+                        and narrative-driven editing to ensure every frame aligns with the client's brand
                         positioning. The output is clean, intentional, and optimized for digital distribution,
                         social media, and long-term archival use.
                     </p>
-                    <p className="text-gray-800 text-lg">
-                        Hyper Visuals doesn&apos;t just document events—we package experiences. We focus on
+                    <p className="text-gray-800 text-lg leading-relaxed">
+                        Hyper Visuals doesn't just document events—we package experiences. We focus on
                         clarity, emotion, and momentum, delivering visuals that cut through noise, scale across
                         platforms, and leave a lasting impression. In short: we execute, elevate, and deliver
                         visuals that perform.
@@ -129,9 +129,9 @@ const GallerySection = () => {
     ];
 
     return (
-        <section id="work" className="py-24 bg-white">
+        <section id="work" className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="mb-16">
+                <div className="mb-16 bg-white/60 backdrop-blur-sm inline-block p-6 rounded-2xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Selected Works</h2>
                     <div className="w-20 h-1 bg-hyper-blue"></div>
                 </div>
@@ -144,19 +144,23 @@ const GallerySection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className={`relative overflow-hidden rounded-2xl group ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'}`}
+                            className={`group ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'}`}
                         >
-                            <div className="aspect-[4/5] relative">
+                            {/* Fixed Corners: 
+                                Applied rounded-2xl and overflow-hidden to the inner container directly.
+                                Added isolation and transform fixes to keep corners crisp during hover.
+                            */}
+                            <div className="aspect-[4/5] relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 isolate transform-gpu">
                                 <Image
                                     src={src}
                                     alt="Event photography"
                                     fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
                                 />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-                                <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <p className="font-bold text-xl">Event Title {index + 1}</p>
-                                    <p className="text-sm text-gray-200">Photography</p>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="absolute bottom-0 left-0 p-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                                    <p className="font-bold text-2xl mb-1">Event Title {index + 1}</p>
+                                    <p className="text-sm text-gray-200 font-medium tracking-wide">PHOTOGRAPHY</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -168,10 +172,6 @@ const GallerySection = () => {
 };
 
 const TeamSection = () => {
-    // To update team members, edit the array below.
-    // 1. Add your images to the `public/team` folder.
-    // 2. Update the `imageSrc` path for each member.
-    // 3. For best results, use portrait images with a 4:5 aspect ratio (e.g., 800x1000px).
     const teamMembers = [
         {
             name: "Rayon Senuka",
@@ -191,7 +191,6 @@ const TeamSection = () => {
             description: "Specializing in cinematic edits and high-energy event coverage.",
             imageSrc: "/team/team-3.jpg"
         },
-
         {
             name: "Kanishka Lanza",
             role: "Drone Operator",
@@ -207,11 +206,11 @@ const TeamSection = () => {
     ];
 
     return (
-        <section id="team" className="py-24 bg-gray-50">
+        <section id="team" className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-16">
+                <div className="text-center mb-16 bg-white/50 backdrop-blur-sm py-8 rounded-3xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">The Creatives</h2>
-                    <p className="text-gray-800 max-w-2xl mx-auto">
+                    <p className="text-gray-800 max-w-2xl mx-auto text-lg">
                         We are a team of passionate storytellers obsessed with light, composition, and emotion.
                     </p>
                 </div>
@@ -221,19 +220,19 @@ const TeamSection = () => {
                         <motion.div
                             key={index}
                             whileHover={{ y: -10 }}
-                            className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-shadow"
+                            className="bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-lg border border-white/50 hover:shadow-2xl transition-all duration-300"
                         >
-                            <div className="w-full h-64 bg-gray-200 rounded-xl mb-6 relative overflow-hidden">
+                            <div className="w-full h-72 bg-gray-200 rounded-2xl mb-6 relative overflow-hidden shadow-inner">
                                 <Image
                                     src={teamMember.imageSrc}
                                     alt={teamMember.name}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900">{teamMember.name}</h3>
-                            <p className="text-gray-800 font-medium mb-4">{teamMember.role}</p>
-                            <p className="text-gray-700 text-sm">
+                            <p className="text-hyper-blue font-bold mb-3 text-sm">{teamMember.role.toUpperCase()}</p>
+                            <p className="text-gray-700 text-sm leading-relaxed">
                                 {teamMember.description}
                             </p>
                         </motion.div>
@@ -246,17 +245,20 @@ const TeamSection = () => {
 
 const Testimonials = () => {
     return (
-        <section id="reviews" className="py-24 bg-hyper-dark text-white">
-            <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <section id="reviews" className="py-24 bg-hyper-dark text-white relative overflow-hidden">
+            {/* Subtle Texture/Pattern for dark section */}
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+            
+            <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
                 <div>
-                    <h2 className="text-4xl font-bold mb-6">Don't take our word for it.</h2>
-                    <p className="text-gray-300 text-lg mb-8">
+                    <h2 className="text-5xl font-bold mb-6">Don't take our word for it.</h2>
+                    <p className="text-gray-300 text-lg mb-8 leading-relaxed">
                         We've captured over 500+ events across the country. Here is what our clients have to say about the Hyper experience.
                     </p>
-                    <div className="flex gap-2 text-hyper-blue mb-2">
-                        {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" />)}
+                    <div className="flex gap-2 text-hyper-blue mb-4">
+                        {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" size={24} />)}
                     </div>
-                    <p className="font-bold text-2xl">5.0 Star Rating</p>
+                    <p className="font-bold text-3xl">5.0 Star Rating</p>
                 </div>
 
                 <div className="space-y-6">
@@ -266,16 +268,17 @@ const Testimonials = () => {
                             initial={{ x: 50, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
-                            className="bg-white/10 p-8 rounded-2xl backdrop-blur-sm"
+                            whileHover={{ scale: 1.02 }}
+                            className="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/10 shadow-2xl"
                         >
-                            <p className="text-lg italic mb-4">
+                            <p className="text-xl italic mb-6 text-gray-100">
                                 "Hyper Visuals completely transformed how we see our corporate events. The highlight reel was cinematic quality."
                             </p>
                             <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-gray-500" />
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-hyper-blue to-purple-600 shadow-lg" />
                                 <div>
-                                    <p className="font-bold">Sarah Jenkins</p>
-                                    <p className="text-sm text-gray-300">Event Manager, Tech Corp</p>
+                                    <p className="font-bold text-lg">Sarah Jenkins</p>
+                                    <p className="text-sm text-gray-400">Event Manager, Tech Corp</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -306,11 +309,11 @@ const ServicesSection = () => {
     ];
 
     return (
-        <section id="services" className="py-24 bg-white">
+        <section id="services" className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="mb-16 text-center">
+                <div className="mb-16 text-center bg-white/50 backdrop-blur-sm py-8 rounded-3xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
-                    <p className="text-gray-800 max-w-2xl mx-auto">
+                    <p className="text-gray-800 max-w-2xl mx-auto text-lg">
                         From intimate weddings to arena-scale festivals, we design coverage that fits your story,
                         your audience, and your brand.
                     </p>
@@ -324,13 +327,16 @@ const ServicesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-hyper-blue/40 hover:shadow-lg transition-all"
+                            className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white/50 hover:border-hyper-blue/50 hover:shadow-2xl transition-all duration-300 group"
                         >
-                            <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                            <p className="text-gray-800 mb-4">{service.description}</p>
-                            <ul className="space-y-1 text-sm text-gray-700">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-hyper-blue transition-colors">{service.title}</h3>
+                            <p className="text-gray-700 mb-6 leading-relaxed">{service.description}</p>
+                            <ul className="space-y-3 text-sm text-gray-600">
                                 {service.details.map((item) => (
-                                    <li key={item}>• {item}</li>
+                                    <li key={item} className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-hyper-blue" />
+                                        {item}
+                                    </li>
                                 ))}
                             </ul>
                         </motion.div>
@@ -364,11 +370,11 @@ const PackagesSection = () => {
     ];
 
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="mb-16 text-center">
+                <div className="mb-16 text-center bg-white/50 backdrop-blur-sm py-8 rounded-3xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Packages</h2>
-                    <p className="text-gray-800 max-w-2xl mx-auto">
+                    <p className="text-gray-800 max-w-2xl mx-auto text-lg">
                         Every event is different, but these starting points make it easy to understand what
                         working with us looks like.
                     </p>
@@ -382,31 +388,31 @@ const PackagesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`rounded-2xl p-8 border ${
+                            className={`rounded-3xl p-8 border backdrop-blur-md transition-all duration-300 hover:shadow-2xl ${
                                 index === 1
-                                    ? "bg-black text-white border-hyper-blue shadow-xl scale-105 md:scale-100 md:-mt-4"
-                                    : "bg-white border-gray-100"
+                                    ? "bg-black/95 text-white border-hyper-blue shadow-2xl scale-105 md:scale-110 z-10"
+                                    : "bg-white/90 text-gray-900 border-white/50"
                             }`}
                         >
                             <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                            <p className="text-hyper-blue font-semibold mb-4">{pkg.price}</p>
-                            <p className={`text-sm mb-6 ${index === 1 ? 'text-gray-300' : 'text-gray-800'}`}>
+                            <p className="text-hyper-blue font-bold text-xl mb-4">{pkg.price}</p>
+                            <p className={`text-sm mb-6 ${index === 1 ? 'text-gray-300' : 'text-gray-600'}`}>
                                 {pkg.description}
                             </p>
-                            <ul className="space-y-2 text-sm mb-8">
+                            <ul className="space-y-3 text-sm mb-8">
                                 {pkg.features.map((feature) => (
-                                    <li key={feature} className="flex items-start gap-2">
-                                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-hyper-blue" />
+                                    <li key={feature} className="flex items-start gap-3">
+                                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-hyper-blue shrink-0" />
                                         <span>{feature}</span>
                                     </li>
                                 ))}
                             </ul>
                             <a
                                 href="#contact"
-                                className={`inline-flex items-center justify-center w-full rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                                className={`inline-flex items-center justify-center w-full rounded-full px-4 py-3 text-sm font-bold transition-all shadow-lg ${
                                     index === 1
                                         ? "bg-hyper-blue text-white hover:bg-white hover:text-hyper-blue"
-                                        : "bg-black text-white hover:bg-hyper-blue"
+                                        : "bg-black text-white hover:bg-hyper-blue hover:scale-105"
                                 }`}
                             >
                                 Enquire about this package
@@ -421,80 +427,85 @@ const PackagesSection = () => {
 
 const ContactSection = () => {
     return (
-        <section id="contact" className="py-24 bg-white">
+        <section id="contact" className="py-24">
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-                <div>
+                <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-lg border border-white/50">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to capture your event?</h2>
-                    <p className="text-gray-800 mb-6">
-                        Tell us a bit about your event and we&apos;ll get back to you within 24 hours with
+                    <p className="text-gray-800 mb-8 text-lg">
+                        Tell us a bit about your event and we'll get back to you within 24 hours with
                         availability and next steps.
                     </p>
-                    <div className="space-y-2 text-gray-800">
-                        <p><span className="font-semibold">Email:</span> hello@hypervisuals.studio</p>
-                        <p><span className="font-semibold">Based in:</span> Your City, available worldwide</p>
+                    <div className="space-y-4 text-gray-800">
+                        <p className="flex items-center gap-3">
+                            <Mail className="text-hyper-blue" /> 
+                            <span className="font-medium">hello@hypervisuals.studio</span>
+                        </p>
+                        <p className="flex items-center gap-3">
+                            <MapPin className="text-hyper-blue" />
+                            <span className="font-medium">Based in: Your City, available worldwide</span>
+                        </p>
                     </div>
                 </div>
 
-                <form className="bg-gray-50 rounded-2xl p-6 md:p-8 space-y-4 shadow-sm">
-                    <div className="grid md:grid-cols-2 gap-4">
+                <form className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-10 space-y-5 shadow-2xl border border-white/50">
+                    <div className="grid md:grid-cols-2 gap-5">
                         <div>
-                            <label className="block text-sm font-medium mb-1 text-gray-800">Name</label>
+                            <label className="block text-sm font-bold mb-2 text-gray-700">Name</label>
                             <input
                                 type="text"
-                                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
+                                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                                 placeholder="Jane Doe"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium mb-1 text-gray-800">Email</label>
+                            <label className="block text-sm font-bold mb-2 text-gray-700">Email</label>
                             <input
                                 type="email"
-                                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
+                                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                                 placeholder="you@example.com"
                             />
                         </div>
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-1 text-gray-800">Event Type</label>
+                        <label className="block text-sm font-bold mb-2 text-gray-700">Event Type</label>
                         <input
                             type="text"
-                            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
+                            className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                             placeholder="Wedding, festival, corporate, etc."
                         />
                     </div>
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 gap-5">
                         <div>
-                            <label className="block text-sm font-medium mb-1 text-gray-800">Date</label>
+                            <label className="block text-sm font-bold mb-2 text-gray-700">Date</label>
                             <input
                                 type="date"
-                                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
+                                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium mb-1 text-gray-800">Location</label>
+                            <label className="block text-sm font-bold mb-2 text-gray-700">Location</label>
                             <input
                                 type="text"
-                                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue"
+                                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                                 placeholder="City, venue"
                             />
                         </div>
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-1 text-gray-800">Tell us about your event</label>
+                        <label className="block text-sm font-bold mb-2 text-gray-700">Tell us about your event</label>
                         <textarea
-                            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm h-28 resize-none focus:outline-none focus:ring-2 focus:ring-hyper-blue"
+                            className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm h-32 resize-none focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                             placeholder="Number of guests, schedule, what kind of content you need..."
                         />
                     </div>
                     <button
                         type="button"
-                        className="w-full bg-black text-white py-3 rounded-full text-sm font-semibold hover:bg-hyper-blue transition-colors"
+                        className="w-full bg-black text-white py-4 rounded-full text-sm font-bold hover:bg-hyper-blue hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
                     >
                         Send enquiry (mock)
                     </button>
-                    <p className="text-[11px] text-gray-500">
-                        This form is for demo purposes only. Hook it up to your favourite form provider or email
-                        service.
+                    <p className="text-xs text-center text-gray-400">
+                        This form is for demo purposes only.
                     </p>
                 </form>
             </div>
@@ -514,14 +525,14 @@ const Footer = () => (
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label="Visit our Google Business page"
-                    className="hover:text-hyper-blue cursor-pointer transition-colors"
+                    className="hover:text-hyper-blue cursor-pointer transition-colors transform hover:scale-110"
                 >
                     <MapPin size={24} />
                 </a>
                 <a 
                     href="mailto:info@hypervisuals.com" 
                     aria-label="Send us an email"
-                    className="hover:text-hyper-blue cursor-pointer transition-colors"
+                    className="hover:text-hyper-blue cursor-pointer transition-colors transform hover:scale-110"
                 >
                     <Mail size={24} />
                 </a>
@@ -535,7 +546,7 @@ const Footer = () => (
 
 export default function Home() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen">
             <NavBar />
             <Hero />
             <AboutSection />
