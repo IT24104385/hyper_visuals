@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Star, ArrowRight, Mail, MapPin } from "lucide-react";
+import { Star, ArrowRight, Mail, MapPin, Instagram, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 // --- Components ---
@@ -435,24 +435,64 @@ const ContactSection = () => {
                         Tell us a bit about your event and we'll get back to you within 24 hours with
                         availability and next steps.
                     </p>
-                    <div className="space-y-4 text-gray-800">
+                    <div className="space-y-6 text-gray-800 mb-10">
                         <p className="flex items-center gap-3">
-                            <Mail className="text-hyper-blue" /> 
-                            <span className="font-medium">hello@hypervisuals.studio</span>
+                            <Mail className="text-hyper-blue" />
+                            <span className="font-medium">hypervisuals.creative@gmail.com</span>
                         </p>
                         <p className="flex items-center gap-3">
                             <MapPin className="text-hyper-blue" />
-                            <span className="font-medium">Based in: Your City, available worldwide</span>
+                            <span className="font-medium">Based in: Sri Lanka, available worldwide</span>
                         </p>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h3 className="font-bold text-gray-900 text-lg">Follow Us</h3>
+                        <div className="flex flex-wrap gap-4">
+                            <a
+                                href="https://www.instagram.com/hyper_visuals.lk/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white px-6 py-3 rounded-full font-bold text-sm hover:scale-105 hover:shadow-lg transition-all"
+                            >
+                                <Instagram size={20} />
+                                Instagram
+                            </a>
+                            {/* NOTE: Replace YOUR_WHATSAPP_NUMBER below with your actual number (e.g., 9477xxxxxxx) */}
+                            <a
+                                href="https://wa.me/YOUR_WHATSAPP_NUMBER"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full font-bold text-sm hover:scale-105 hover:shadow-lg transition-all"
+                            >
+                                <MessageCircle size={20} />
+                                WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <form className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-10 space-y-5 shadow-2xl border border-white/50">
+                {/* Working Form via FormSubmit.co */}
+                <form
+                    action="https://formsubmit.co/hypervisuals.creative@gmail.com"
+                    method="POST"
+                    className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-10 space-y-5 shadow-2xl border border-white/50"
+                >
+                    {/* Anti-spam field (Honeypot) - Keep hidden */}
+                    <input type="text" name="_honey" style={{ display: "none" }} />
+                    
+                    {/* Form Configuration */}
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_subject" value="New Enquiry from Hyper Visuals Website" />
+                    <input type="hidden" name="_template" value="table" />
+
                     <div className="grid md:grid-cols-2 gap-5">
                         <div>
                             <label className="block text-sm font-bold mb-2 text-gray-700">Name</label>
                             <input
                                 type="text"
+                                name="name"
+                                required
                                 className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                                 placeholder="Jane Doe"
                             />
@@ -461,6 +501,8 @@ const ContactSection = () => {
                             <label className="block text-sm font-bold mb-2 text-gray-700">Email</label>
                             <input
                                 type="email"
+                                name="email"
+                                required
                                 className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                                 placeholder="you@example.com"
                             />
@@ -470,6 +512,8 @@ const ContactSection = () => {
                         <label className="block text-sm font-bold mb-2 text-gray-700">Event Type</label>
                         <input
                             type="text"
+                            name="eventType"
+                            required
                             className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                             placeholder="Wedding, festival, corporate, etc."
                         />
@@ -479,6 +523,8 @@ const ContactSection = () => {
                             <label className="block text-sm font-bold mb-2 text-gray-700">Date</label>
                             <input
                                 type="date"
+                                name="date"
+                                required
                                 className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                             />
                         </div>
@@ -486,6 +532,8 @@ const ContactSection = () => {
                             <label className="block text-sm font-bold mb-2 text-gray-700">Location</label>
                             <input
                                 type="text"
+                                name="location"
+                                required
                                 className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                                 placeholder="City, venue"
                             />
@@ -494,18 +542,20 @@ const ContactSection = () => {
                     <div>
                         <label className="block text-sm font-bold mb-2 text-gray-700">Tell us about your event</label>
                         <textarea
+                            name="message"
+                            required
                             className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm h-32 resize-none focus:outline-none focus:ring-2 focus:ring-hyper-blue focus:bg-white transition-all"
                             placeholder="Number of guests, schedule, what kind of content you need..."
                         />
                     </div>
                     <button
-                        type="button"
+                        type="submit"
                         className="w-full bg-black text-white py-4 rounded-full text-sm font-bold hover:bg-hyper-blue hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
                     >
-                        Send enquiry (mock)
+                        Send Enquiry
                     </button>
                     <p className="text-xs text-center text-gray-400">
-                        This form is for demo purposes only.
+                        We respect your privacy.
                     </p>
                 </form>
             </div>
@@ -530,11 +580,19 @@ const Footer = () => (
                     <MapPin size={24} />
                 </a>
                 <a 
-                    href="mailto:info@hypervisuals.com" 
+                    href="mailto:hypervisuals.creative@gmail.com" 
                     aria-label="Send us an email"
                     className="hover:text-hyper-blue cursor-pointer transition-colors transform hover:scale-110"
                 >
                     <Mail size={24} />
+                </a>
+                <a 
+                    href="https://www.instagram.com/hyper_visuals.lk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-hyper-blue cursor-pointer transition-colors transform hover:scale-110"
+                >
+                    <Instagram size={24} />
                 </a>
             </div>
             <div className="text-gray-400 text-sm mt-4 md:mt-0">
