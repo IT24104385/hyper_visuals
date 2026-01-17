@@ -91,7 +91,6 @@ const AboutSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    // CHANGED: Increased opacity to bg-white and added border-gray-200 for better visibility
                     className="space-y-6 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-200"
                 >
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">About Hyper Visuals</h2>
@@ -132,7 +131,6 @@ const GallerySection = () => {
     return (
         <section id="work" className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                {/* CHANGED: Solid white background for title card */}
                 <div className="mb-16 bg-white shadow-md border border-gray-200 inline-block p-6 rounded-2xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Selected Works</h2>
                     <div className="w-20 h-1 bg-hyper-blue"></div>
@@ -155,11 +153,7 @@ const GallerySection = () => {
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                <div className="absolute bottom-0 left-0 p-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                    <p className="font-bold text-2xl mb-1">Event Title {index + 1}</p>
-                                    <p className="text-sm text-gray-200 font-medium tracking-wide">PHOTOGRAPHY</p>
-                                </div>
+                                {/* REMOVED: Text overlays and gradient have been removed for a cleaner look */}
                             </div>
                         </motion.div>
                     ))}
@@ -183,7 +177,7 @@ const TeamSection = () => {
             role: "Lead Photographer",
             description: "Capturing candid moments and stunning visual narratives.",
             imageSrc: "/team/team-2.jpg",
-            link: "https://www.instagram.com/senuka.rosa/" // Link added here
+            link: "https://www.instagram.com/senuka.rosa/" 
         },
         {
             name: "Minusha Chalindu",
@@ -220,7 +214,6 @@ const TeamSection = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {teamMembers.map((teamMember, index) => {
-                        // Determine component type: 'motion.a' if it has a link, 'motion.div' if not
                         const MotionComponent = teamMember.link ? motion.a : motion.div;
                         const extraProps = teamMember.link ? { href: teamMember.link, target: "_blank", rel: "noopener noreferrer" } : {};
 
@@ -229,7 +222,6 @@ const TeamSection = () => {
                                 key={index}
                                 {...extraProps}
                                 whileHover={{ y: -10 }}
-                                // CHANGED: Changed bg-white/90 to bg-white, added border-gray-200 and shadow-xl for contrast
                                 className={`block p-6 rounded-3xl shadow-xl border border-gray-200 transition-all duration-300 ${
                                     teamMember.link ? "bg-white hover:border-hyper-blue cursor-pointer" : "bg-white"
                                 }`}
@@ -289,7 +281,6 @@ const Testimonials = () => {
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.02 }}
-                            // CHANGED: Increased border contrast slightly for dark mode cards
                             className="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/20 shadow-2xl"
                         >
                             <p className="text-xl italic mb-6 text-gray-100">
@@ -348,7 +339,6 @@ const ServicesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            // CHANGED: Solid bg-white, stronger border and shadow
                             className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl hover:border-hyper-blue hover:shadow-2xl transition-all duration-300 group"
                         >
                             <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-hyper-blue transition-colors">{service.title}</h3>
@@ -410,7 +400,6 @@ const PackagesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            // CHANGED: Light cards are now solid white with gray border. Dark card remains distinctive.
                             className={`rounded-3xl p-8 border transition-all duration-300 hover:shadow-2xl ${
                                 index === 1
                                     ? "bg-black/95 text-white border-hyper-blue shadow-2xl scale-105 md:scale-110 z-10"
@@ -452,7 +441,6 @@ const ContactSection = () => {
     return (
         <section id="contact" className="py-24">
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-                {/* CHANGED: Solid bg-white, stronger border and shadow */}
                 <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-200">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to capture your event?</h2>
                     <p className="text-gray-800 mb-8 text-lg">
@@ -497,7 +485,6 @@ const ContactSection = () => {
                 </div>
 
                 {/* Working Form via FormSubmit.co */}
-                {/* CHANGED: Solid bg-white, stronger border and shadow */}
                 <form
                     action="https://formsubmit.co/hypervisuals.creative@gmail.com"
                     method="POST"
