@@ -571,7 +571,7 @@ const Footer = () => (
             </div>
             <div className="flex gap-6">
                 <a 
-                    href="https://www.google.com/maps?cid=YOUR_GOOGLE_BUSINESS_CID" 
+                    href="https://share.google/0Xl63nt9hzNK5LXuj"
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label="Visit our Google Business page"
