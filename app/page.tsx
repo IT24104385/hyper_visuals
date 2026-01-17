@@ -251,7 +251,7 @@ const TeamSection = () => {
                                     {teamMember.name}
                                     {teamMember.link && <ExternalLink size={16} className="text-gray-400" />}
                                 </h3>
-                                <p className="text-hyper-blue font-bold mb-3 text-sm">{teamMember.role.toUpperCase()}</p>
+                                <p className="text-blue-400 font-bold mb-3 text-sm">{teamMember.role.toUpperCase()}</p>
                                 <p className="text-gray-700 text-sm leading-relaxed">
                                     {teamMember.description}
                                 </p>
@@ -484,7 +484,7 @@ const ContactSection = () => {
                             </a>
                             {/* NOTE: Replace YOUR_WHATSAPP_NUMBER below with your actual number (e.g., 9477xxxxxxx) */}
                             <a
-                                href="https://wa.me/YOUR_WHATSAPP_NUMBER"
+                                href="https://wa.me/94767618727"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full font-bold text-sm hover:scale-105 hover:shadow-lg transition-all"
