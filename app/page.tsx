@@ -11,7 +11,7 @@ const NavBar = () => (
     <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div className="text-2xl font-bold tracking-tight text-black">
-                <span className="text-hyper-blue">Hyper</span>Visuals
+                <span className="text-hyper-blue">Hyper</span> Visuals
             </div>
             <div className="hidden md:flex gap-8 text-sm font-medium text-gray-700">
                 <a href="#about" className="hover:text-hyper-blue transition-colors">About</a>
@@ -38,7 +38,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/90 z-10" />
             <div className="absolute inset-0 z-0">
                 {/* Replace with your actual showreel video background */}
-                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center animate-slow-zoom"></div>
+                <div className="w-full h-full bg-[url('/background/theme.jpg')] bg-cover bg-center animate-slow-zoom"></div>
             </div>
 
             <div className="relative z-20 text-center max-w-4xl px-6">
@@ -122,10 +122,10 @@ const AboutSection = () => {
 
 const GallerySection = () => {
     const images = [
-        "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800", // Wedding
-        "https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=800", // Concert
-        "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800", // Corporate
-        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800", // Party
+        "/gallery/gallery-1.jpg", // Wedding
+        "/gallery/gallery-2.jpg", // Concert
+        "/gallery/gallery-3.jpg", // Corporate
+        "/gallery/gallery-4.jpg", // Party
     ];
 
     return (
@@ -231,7 +231,7 @@ const TeamSection = () => {
                                 />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900">{teamMember.name}</h3>
-                            <p className="text-hyper-blue font-bold mb-3 text-sm">{teamMember.role.toUpperCase()}</p>
+                            <p className="text-blue-400 font-bold mb-3 text-sm">{teamMember.role.toUpperCase()}</p>
                             <p className="text-gray-700 text-sm leading-relaxed">
                                 {teamMember.description}
                             </p>
