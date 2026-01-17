@@ -265,7 +265,7 @@ const Testimonials = () => {
                 <div>
                     <h2 className="text-5xl font-bold mb-6">Don't take our word for it.</h2>
                     <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                        We've captured over 500+ events across the country. Here is what our clients have to say about the Hyper experience.
+                        We've captured over 10+ events across the country. Here is what our clients have to say about the Hyper experience.
                     </p>
                     <div className="flex gap-2 text-hyper-blue mb-4">
                         {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" size={24} />)}
@@ -289,8 +289,8 @@ const Testimonials = () => {
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-hyper-blue to-purple-600 shadow-lg" />
                                 <div>
-                                    <p className="font-bold text-lg">Sarah Jenkins</p>
-                                    <p className="text-sm text-gray-400">Event Manager, Tech Corp</p>
+                                    <p className="font-bold text-lg">Nirman Supeshala</p>
+                                    <p className="text-sm text-gray-400">Event Organizer, Maris Agni</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -363,13 +363,13 @@ const PackagesSection = () => {
     const packages = [
         {
             name: "Essential",
-            price: "Starting at $1,200",
+            price: "Starting at LKR 40,000",
             description: "Perfect for intimate events and half-day coverage.",
             features: ["1 filmmaker", "Up to 5 hours coverage", "Highlight reel (2–3 min)"],
         },
         {
             name: "Signature",
-            price: "Starting at $2,400",
+            price: "Starting at LKR 70,000",
             description: "Our most popular package for full-day events.",
             features: ["2 filmmakers", "Full-day coverage", "Highlight + full documentary edit"],
         },
