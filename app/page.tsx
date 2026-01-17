@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Star, ArrowRight, Mail, MapPin, Instagram, MessageCircle } from "lucide-react";
+import { Star, ArrowRight, Mail, MapPin, Instagram, MessageCircle, ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 // --- Components ---
@@ -91,7 +91,7 @@ const AboutSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="space-y-6 bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-xl border border-white/50"
+                    className="space-y-6 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-200"
                 >
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">About Hyper Visuals</h2>
                     <p className="text-gray-800 text-lg leading-relaxed">
@@ -131,7 +131,7 @@ const GallerySection = () => {
     return (
         <section id="work" className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="mb-16 bg-white/60 backdrop-blur-sm inline-block p-6 rounded-2xl">
+                <div className="mb-16 bg-white shadow-md border border-gray-200 inline-block p-6 rounded-2xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Selected Works</h2>
                     <div className="w-20 h-1 bg-hyper-blue"></div>
                 </div>
@@ -146,10 +146,6 @@ const GallerySection = () => {
                             viewport={{ once: true }}
                             className={`group ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'}`}
                         >
-                            {/* Fixed Corners: 
-                                Applied rounded-2xl and overflow-hidden to the inner container directly.
-                                Added isolation and transform fixes to keep corners crisp during hover.
-                            */}
                             <div className="aspect-[4/5] relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 isolate transform-gpu">
                                 <Image
                                     src={src}
@@ -157,11 +153,7 @@ const GallerySection = () => {
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                <div className="absolute bottom-0 left-0 p-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                    <p className="font-bold text-2xl mb-1">Event Title {index + 1}</p>
-                                    <p className="text-sm text-gray-200 font-medium tracking-wide">PHOTOGRAPHY</p>
-                                </div>
+                                {/* REMOVED: Text overlays and gradient have been removed for a cleaner look */}
                             </div>
                         </motion.div>
                     ))}
@@ -177,38 +169,43 @@ const TeamSection = () => {
             name: "Rayon Senuka",
             role: "Creative Director",
             description: "Overseeing creative vision and ensuring brand consistency.",
-            imageSrc: "/team/team-1.jpg"
+            imageSrc: "/team/team-1.jpg",
+            link: null
         },
         {
             name: "Senuka Rosa",
             role: "Lead Photographer",
             description: "Capturing candid moments and stunning visual narratives.",
-            imageSrc: "/team/team-2.jpg"
+            imageSrc: "/team/team-2.jpg",
+            link: "https://www.instagram.com/senuka.rosa/" 
         },
         {
             name: "Minusha Chalindu",
             role: "Lead Videographer",
             description: "Specializing in cinematic edits and high-energy event coverage.",
-            imageSrc: "/team/team-3.jpg"
+            imageSrc: "/team/team-3.jpg",
+            link: null
         },
         {
             name: "Kanishka Lanza",
             role: "Drone Operator",
             description: "Providing breathtaking aerial shots and dynamic perspectives.",
-            imageSrc: "/team/team-4.jpg"
+            imageSrc: "/team/team-4.jpg",
+            link: null
         },
         {
             name: "Shenal Nethmina",
             role: "Photographer",
             description: "Focused on capturing the details and emotions that tell a story.",
-            imageSrc: "/team/team-5.jpg"
+            imageSrc: "/team/team-5.jpg",
+            link: null
         },
     ];
 
     return (
         <section id="team" className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-16 bg-white/50 backdrop-blur-sm py-8 rounded-3xl">
+                <div className="text-center mb-16 bg-white shadow-md border border-gray-200 py-8 rounded-3xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">The Creatives</h2>
                     <p className="text-gray-800 max-w-2xl mx-auto text-lg">
                         We are a team of passionate storytellers obsessed with light, composition, and emotion.
@@ -216,27 +213,43 @@ const TeamSection = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {teamMembers.map((teamMember, index) => (
-                        <motion.div
-                            key={index}
-                            whileHover={{ y: -10 }}
-                            className="bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-lg border border-white/50 hover:shadow-2xl transition-all duration-300"
-                        >
-                            <div className="w-full h-72 bg-gray-200 rounded-2xl mb-6 relative overflow-hidden shadow-inner">
-                                <Image
-                                    src={teamMember.imageSrc}
-                                    alt={teamMember.name}
-                                    fill
-                                    className="object-cover hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900">{teamMember.name}</h3>
-                            <p className="text-blue-400 font-bold mb-3 text-sm">{teamMember.role.toUpperCase()}</p>
-                            <p className="text-gray-700 text-sm leading-relaxed">
-                                {teamMember.description}
-                            </p>
-                        </motion.div>
-                    ))}
+                    {teamMembers.map((teamMember, index) => {
+                        const MotionComponent = teamMember.link ? motion.a : motion.div;
+                        const extraProps = teamMember.link ? { href: teamMember.link, target: "_blank", rel: "noopener noreferrer" } : {};
+
+                        return (
+                            <MotionComponent
+                                key={index}
+                                {...extraProps}
+                                whileHover={{ y: -10 }}
+                                className={`block p-6 rounded-3xl shadow-xl border border-gray-200 transition-all duration-300 ${
+                                    teamMember.link ? "bg-white hover:border-hyper-blue cursor-pointer" : "bg-white"
+                                }`}
+                            >
+                                <div className="w-full h-72 bg-gray-200 rounded-2xl mb-6 relative overflow-hidden shadow-inner">
+                                    <Image
+                                        src={teamMember.imageSrc}
+                                        alt={teamMember.name}
+                                        fill
+                                        className="object-cover hover:scale-105 transition-transform duration-500"
+                                    />
+                                    {teamMember.link && (
+                                        <div className="absolute top-4 right-4 bg-white/90 p-2 rounded-full text-pink-600 shadow-lg backdrop-blur-sm">
+                                            <Instagram size={18} />
+                                        </div>
+                                    )}
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                                    {teamMember.name}
+                                    {teamMember.link && <ExternalLink size={16} className="text-gray-400" />}
+                                </h3>
+                                <p className="text-hyper-blue font-bold mb-3 text-sm">{teamMember.role.toUpperCase()}</p>
+                                <p className="text-gray-700 text-sm leading-relaxed">
+                                    {teamMember.description}
+                                </p>
+                            </MotionComponent>
+                        );
+                    })}
                 </div>
             </div>
         </section>
@@ -246,7 +259,6 @@ const TeamSection = () => {
 const Testimonials = () => {
     return (
         <section id="reviews" className="py-24 bg-hyper-dark text-white relative overflow-hidden">
-            {/* Subtle Texture/Pattern for dark section */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
             
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
@@ -269,7 +281,7 @@ const Testimonials = () => {
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.02 }}
-                            className="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/10 shadow-2xl"
+                            className="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/20 shadow-2xl"
                         >
                             <p className="text-xl italic mb-6 text-gray-100">
                                 "Hyper Visuals completely transformed how we see our corporate events. The highlight reel was cinematic quality."
@@ -311,7 +323,7 @@ const ServicesSection = () => {
     return (
         <section id="services" className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="mb-16 text-center bg-white/50 backdrop-blur-sm py-8 rounded-3xl">
+                <div className="mb-16 text-center bg-white shadow-md border border-gray-200 py-8 rounded-3xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
                     <p className="text-gray-800 max-w-2xl mx-auto text-lg">
                         From intimate weddings to arena-scale festivals, we design coverage that fits your story,
@@ -327,7 +339,7 @@ const ServicesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white/50 hover:border-hyper-blue/50 hover:shadow-2xl transition-all duration-300 group"
+                            className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl hover:border-hyper-blue hover:shadow-2xl transition-all duration-300 group"
                         >
                             <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-hyper-blue transition-colors">{service.title}</h3>
                             <p className="text-gray-700 mb-6 leading-relaxed">{service.description}</p>
@@ -372,7 +384,7 @@ const PackagesSection = () => {
     return (
         <section className="py-24">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="mb-16 text-center bg-white/50 backdrop-blur-sm py-8 rounded-3xl">
+                <div className="mb-16 text-center bg-white shadow-md border border-gray-200 py-8 rounded-3xl">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Packages</h2>
                     <p className="text-gray-800 max-w-2xl mx-auto text-lg">
                         Every event is different, but these starting points make it easy to understand what
@@ -388,10 +400,10 @@ const PackagesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`rounded-3xl p-8 border backdrop-blur-md transition-all duration-300 hover:shadow-2xl ${
+                            className={`rounded-3xl p-8 border transition-all duration-300 hover:shadow-2xl ${
                                 index === 1
                                     ? "bg-black/95 text-white border-hyper-blue shadow-2xl scale-105 md:scale-110 z-10"
-                                    : "bg-white/90 text-gray-900 border-white/50"
+                                    : "bg-white text-gray-900 border-gray-200 shadow-xl"
                             }`}
                         >
                             <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
@@ -429,7 +441,7 @@ const ContactSection = () => {
     return (
         <section id="contact" className="py-24">
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-                <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-lg border border-white/50">
+                <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-200">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to capture your event?</h2>
                     <p className="text-gray-800 mb-8 text-lg">
                         Tell us a bit about your event and we'll get back to you within 24 hours with
@@ -476,7 +488,7 @@ const ContactSection = () => {
                 <form
                     action="https://formsubmit.co/hypervisuals.creative@gmail.com"
                     method="POST"
-                    className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-10 space-y-5 shadow-2xl border border-white/50"
+                    className="bg-white rounded-3xl p-8 md:p-10 space-y-5 shadow-xl border border-gray-200"
                 >
                     {/* Anti-spam field (Honeypot) - Keep hidden */}
                     <input type="text" name="_honey" style={{ display: "none" }} />
