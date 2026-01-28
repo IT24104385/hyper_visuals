@@ -27,7 +27,7 @@ export default function Contact() {
                                 <a href="mailto:hypervisuals.creative@gmail.com" className="flex items-center gap-4 text-black hover:text-gray-500 transition-colors">
                                     <Mail className="w-5 h-5" /> hypervisuals.creative@gmail.com
                                 </a>
-                                <a href="https://wa.me/94767618727" className="flex items-center gap-4 text-black hover:text-gray-500 transition-colors">
+                                <a href="https://wa.me/94704807689" className="flex items-center gap-4 text-black hover:text-gray-500 transition-colors">
                                     <MessageCircle className="w-5 h-5" /> +94 76 761 8727
                                 </a>
                                 <a href="https://instagram.com/hyper_visuals.lk" className="flex items-center gap-4 text-black hover:text-gray-500 transition-colors">
