@@ -26,7 +26,7 @@ export default function Footer() {
                     <h3 className="text-xs font-bold tracking-widest uppercase mb-6 text-gray-500">Office</h3>
                     <p className="text-sm text-gray-300 flex items-start gap-2">
                         <MapPin size={16} className="mt-1 shrink-0"/>
-                        Colombo, Sri Lanka
+                        Negombo, Sri Lanka
                     </p>
                 </div>
             </div>

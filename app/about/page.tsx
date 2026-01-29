@@ -18,11 +18,11 @@ export default function About() {
                     className="grid md:grid-cols-2 gap-16 items-center"
                 >
                     <div className="space-y-8">
-                        <span className="font-mono text-xs tracking-widest uppercase text-gray-500">The Philosophy</span>
-                        <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-none">
+                        <span className="font-mono text-xs font-bold tracking-widest uppercase text-gray-600">The Philosophy</span>
+                        <h1 className="text-5xl md:text-7xl font-normal tracking-tight leading-none text-black">
                             MORE THAN <br/><span className="font-bold">CAMERAS.</span>
                         </h1>
-                        <div className="space-y-6 text-lg font-light leading-relaxed text-gray-600 max-w-xl">
+                        <div className="space-y-6 text-lg font-normal leading-relaxed text-gray-800 max-w-xl">
                             <p>
                                 Hyper Visuals is where technical precision meets creative chaos. We don't just record events; we amplify the energy within them.
                             </p>
@@ -31,7 +31,7 @@ export default function About() {
                             </p>
                         </div>
                     </div>
-                    <div className="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+                    <div className="relative aspect-[4/5] bg-gray-200 overflow-hidden shadow-lg">
                         <Image
                             src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071"
                             alt="Philosophy"

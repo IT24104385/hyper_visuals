@@ -72,8 +72,8 @@ export default function Services() {
 
             <section className="pt-40 pb-24 px-6 md:px-12 max-w-[1800px] mx-auto">
                 <div className="mb-24 text-center md:text-left">
-                    <h1 className="text-6xl md:text-8xl font-light tracking-tighter">PACKAGES</h1>
-                    <p className="font-mono text-sm tracking-widest text-gray-500 mt-4 uppercase max-w-2xl">
+                    <h1 className="text-6xl md:text-8xl font-normal tracking-tighter text-black">PACKAGES</h1>
+                    <p className="font-mono text-sm tracking-widest text-gray-700 mt-4 uppercase max-w-2xl font-medium">
                         Curated experiences tailored for every scale. Competitive entry-level pricing for premium production value.
                     </p>
                 </div>
@@ -81,40 +81,40 @@ export default function Services() {
                 {/* PACKAGES GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-32">
                     {packages.map((pkg, i) => (
-                        <div key={i} className={`relative flex flex-col justify-between p-8 border ${pkg.isElite ? 'bg-black text-white border-black shadow-2xl scale-105 z-10' : 'bg-white text-gray-900 border-gray-200'} transition-all hover:shadow-xl`}>
+                        <div key={i} className={`relative flex flex-col justify-between p-8 border ${pkg.isElite ? 'bg-black text-white border-black shadow-2xl scale-105 z-10' : 'bg-white text-gray-900 border-gray-300'} transition-all hover:shadow-xl`}>
                             <div>
-                                <div className="mb-6 border-b border-opacity-20 pb-6" style={{ borderColor: pkg.isElite ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)' }}>
-                                    <h3 className="text-2xl font-light mb-1">{pkg.title}</h3>
-                                    <span className={`text-xs font-mono tracking-widest uppercase ${pkg.isElite ? 'text-gray-400' : 'text-gray-500'}`}>{pkg.subtitle}</span>
-                                    <p className="text-3xl font-medium mt-4">{pkg.price}</p>
+                                <div className="mb-6 border-b border-opacity-20 pb-6" style={{ borderColor: pkg.isElite ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.2)' }}>
+                                    <h3 className="text-2xl font-medium mb-1">{pkg.title}</h3>
+                                    <span className={`text-xs font-bold font-mono tracking-widest uppercase ${pkg.isElite ? 'text-gray-300' : 'text-gray-600'}`}>{pkg.subtitle}</span>
+                                    <p className="text-3xl font-bold mt-4">{pkg.price}</p>
                                 </div>
 
-                                <p className={`text-sm mb-8 leading-relaxed ${pkg.isElite ? 'text-gray-300' : 'text-gray-600'}`}>{pkg.description}</p>
+                                <p className={`text-sm mb-8 leading-relaxed font-medium ${pkg.isElite ? 'text-gray-200' : 'text-gray-800'}`}>{pkg.description}</p>
 
                                 <div className="space-y-6 text-sm">
                                     <div>
-                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-70">Crew</p>
-                                        <p>{pkg.details.crew}</p>
-                                        {pkg.details.note && <p className="text-xs mt-1 opacity-60 italic">{pkg.details.note}</p>}
+                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Crew</p>
+                                        <p className="font-medium">{pkg.details.crew}</p>
+                                        {pkg.details.note && <p className="text-xs mt-1 opacity-80 italic">{pkg.details.note}</p>}
                                     </div>
 
                                     <div>
-                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-70">Pre-Production</p>
-                                        <ul className="list-disc list-inside space-y-1 opacity-90">
+                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Pre-Production</p>
+                                        <ul className="list-disc list-inside space-y-1 opacity-100 font-medium">
                                             {pkg.details.preProduction.map((item, idx) => <li key={idx}>{item}</li>)}
                                         </ul>
                                     </div>
 
                                     <div>
-                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-70">Production</p>
-                                        <ul className="list-disc list-inside space-y-1 opacity-90">
+                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Production</p>
+                                        <ul className="list-disc list-inside space-y-1 opacity-100 font-medium">
                                             {pkg.details.production.map((item, idx) => <li key={idx}>{item}</li>)}
                                         </ul>
                                     </div>
 
                                     <div>
-                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-70">Post-Production</p>
-                                        <ul className="list-disc list-inside space-y-1 opacity-90">
+                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Post-Production</p>
+                                        <ul className="list-disc list-inside space-y-1 opacity-100 font-medium">
                                             {pkg.details.postProduction.map((item, idx) => <li key={idx}>{item}</li>)}
                                         </ul>
                                     </div>
@@ -122,9 +122,9 @@ export default function Services() {
                             </div>
 
                             {pkg.addOn && (
-                                <div className={`mt-8 pt-6 border-t ${pkg.isElite ? 'border-white/20' : 'border-black/10'}`}>
-                                    <p className="text-xs font-mono uppercase tracking-widest opacity-70 mb-2">Optional Add-On</p>
-                                    <p className="font-medium">{pkg.addOn}</p>
+                                <div className={`mt-8 pt-6 border-t ${pkg.isElite ? 'border-white/30' : 'border-black/20'}`}>
+                                    <p className="text-xs font-bold font-mono uppercase tracking-widest opacity-80 mb-2">Optional Add-On</p>
+                                    <p className="font-bold">{pkg.addOn}</p>
                                 </div>
                             )}
                         </div>
@@ -133,22 +133,22 @@ export default function Services() {
 
                 {/* ADD ONS TABLE */}
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-light mb-12 text-center tracking-tight">OPTIONAL ADD-ONS</h2>
+                    <h2 className="text-3xl font-normal mb-12 text-center tracking-tight text-black">OPTIONAL ADD-ONS</h2>
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                            <tr className="border-b border-black">
-                                <th className="py-4 font-mono text-xs uppercase tracking-widest text-gray-500 w-1/3">Item</th>
-                                <th className="py-4 font-mono text-xs uppercase tracking-widest text-gray-500 w-1/6">Price</th>
-                                <th className="py-4 font-mono text-xs uppercase tracking-widest text-gray-500">Details</th>
+                            <tr className="border-b-2 border-black">
+                                <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black w-1/3">Item</th>
+                                <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black w-1/6">Price</th>
+                                <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black">Details</th>
                             </tr>
                             </thead>
                             <tbody>
                             {addOns.map((addon, index) => (
-                                <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                                    <td className="py-6 pr-8 font-medium">{addon.item}</td>
-                                    <td className="py-6 pr-8 font-mono text-sm whitespace-nowrap">{addon.price}</td>
-                                    <td className="py-6 text-sm text-gray-600 leading-relaxed">{addon.details}</td>
+                                <tr key={index} className="border-b border-gray-300 hover:bg-gray-100 transition-colors">
+                                    <td className="py-6 pr-8 font-bold text-black">{addon.item}</td>
+                                    <td className="py-6 pr-8 font-mono text-sm font-bold whitespace-nowrap text-black">{addon.price}</td>
+                                    <td className="py-6 text-sm text-gray-900 font-medium leading-relaxed">{addon.details}</td>
                                 </tr>
                             ))}
                             </tbody>
