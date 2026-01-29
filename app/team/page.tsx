@@ -20,7 +20,7 @@ export default function Team() {
             <NavBar />
 
             <section className="pt-40 pb-24 px-6 md:px-12 max-w-[1800px] mx-auto">
-                <h1 className="text-6xl md:text-8xl font-light tracking-tighter mb-24 text-center md:text-left">THE ARTISTS</h1>
+                <h1 className="text-6xl md:text-8xl font-light tracking-tighter mb-24 text-center md:text-left text-red-500">THE ARTISTS</h1>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
                     {team.map((member, i) => (
