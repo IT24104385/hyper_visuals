@@ -22,7 +22,7 @@ const packages = [
         title: "The Duo Coverage",
         subtitle: "Standard",
         price: "LKR 35,000",
-        description: "Best for: Engagement parties, homecomings, or simple weddings.",
+        description: "Best for: Engagement parties, homecomings, or simple Events.",
         details: {
             crew: "1 Photographer + 1 Videographer",
             preProduction: ["Shot list creation.", "Coordination with event agenda."],
@@ -35,7 +35,7 @@ const packages = [
         title: "The Pro Storyteller",
         subtitle: "Premium",
         price: "LKR 50,000",
-        description: "Best for: Standard Weddings or Corporate Events where you need to capture guests and the main couple simultaneously.",
+        description: "Best for: Live Music Events or Corporate Events where you need to capture guests and the key people simultaneously.",
         details: {
             crew: "2 Photographers + 1 Videographer",
             note: "(Note: Having a 2nd photographer allows one to focus on the couple/VIPs and the other on candid guest reactions).",
@@ -47,9 +47,9 @@ const packages = [
     },
     {
         title: "The \"Hyper\" Cinema",
-        subtitle: "Elite - RED Komodo",
+        subtitle: "Elite - RED Combo Pack",
         price: "LKR 180,000",
-        description: "Best for: High-end Weddings, Music Videos, or Luxury Commercial Events. This is your flagship package.",
+        description: "Best for: High-end Events, Music Videos, or Luxury Commercial Events. This is your flagship package.",
         isElite: true,
         details: {
             crew: "3 Photographers + 1 Videographer (Cinematographer) + 1 Drone Operator",
@@ -61,7 +61,7 @@ const packages = [
 ];
 
 const addOns = [
-    { item: "Aerial (Drone) Coverage", price: "LKR 8,000", details: "Adds 20-30 mins of flight time for establishing shots. (Included in Elite Package)." },
+    { item: "Aerial (Drone) Coverage", price: "LKR 10,000", details: "Adds 20-30 mins of flight time for establishing shots. (Included in Elite Package)." },
     { item: "360 Video Booth", price: "LKR 30,000", details: "Includes slow-motion capture, instant sharing station, and props. Great for guest interaction." }
 ];
 
