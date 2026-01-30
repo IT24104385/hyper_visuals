@@ -24,10 +24,13 @@ export default function About() {
                         </h1>
                         <div className="space-y-6 text-lg font-normal leading-relaxed text-gray-800 max-w-xl">
                             <p>
-                                Hyper Visuals is where technical precision meets creative chaos. We don't just record events; we amplify the energy within them.
+                                Hyper Visuals operates with a simple principle: visuals should serve a purpose. Technology and creativity are tools, not the gear
                             </p>
                             <p>
-                                Whether it's the bass drop at a festival or the silence before a CEO's keynote, we capture the texture of the moment. Our edits are sharp, our colors are true, and our delivery is seamless.
+                                We focus on precision in capture, discipline in post-production, and consistency in delivery. Every frame is built to communicate clearly, represent brands accurately, and perform across platforms.
+                            </p>
+                            <p>
+                                From corporate events to commercial productions, our work is structured, intentional, and aligned with client objectives. No noise. No guesswork. Just visuals that work.
                             </p>
                         </div>
                     </div>
