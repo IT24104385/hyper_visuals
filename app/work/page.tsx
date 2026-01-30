@@ -22,7 +22,7 @@ export default function Work() {
             <section className="pt-40 pb-24 px-6 md:px-12 max-w-[1800px] mx-auto">
                 <div className="mb-20">
                     <h1 className="text-6xl md:text-8xl font-light tracking-tighter text-black">ARCHIVE</h1>
-                    <p className="font-mono text-xs font-bold tracking-widest text-gray-700 mt-4 uppercase">Selected works 2020 — 2024</p>
+                    <p className="font-mono text-xs font-bold tracking-widest text-gray-700 mt-4 uppercase">Selected works 2025 — 2026</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
