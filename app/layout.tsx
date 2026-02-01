@@ -16,7 +16,7 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: "Hyper Visuals.LK",
-  description: "Created by Senuka Rosa",
+  description: "Created by Team Hyper Visuals",
 };
 
 export default function RootLayout({
