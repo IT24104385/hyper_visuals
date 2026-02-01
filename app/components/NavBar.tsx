@@ -135,7 +135,7 @@ export default function NavBar() {
                                         <Mail size={16} /> hypervisuals.creative@gmail.com
                                     </a>
                                     <p className="flex items-center gap-3 text-sm font-medium text-gray-800">
-                                        <MapPin size={16} /> Colombo, Sri Lanka
+                                        <MapPin size={16} /> Negombo, Sri Lanka
                                     </p>
                                 </div>
                                 <div className="flex gap-4 pt-4">
