@@ -7,8 +7,8 @@ import Footer from "../components/Footer";
 import { Instagram } from "lucide-react";
 
 const team = [
-    { name: "Rayon Fernando", role: "Creative Director", img: "/team/team-1.jpg" },
     { name: "Senuka Rosa", role: "Lead Photographer", img: "/team/team-2.jpg", link: "https://www.instagram.com/senuka.rosa/" },
+    { name: "Rayon Fernando", role: "Creative Director", img: "/team/team-1.jpg" },
     { name: "Minusha Balasooriya", role: "Videographer", img: "/team/team-3.jpg" },
     { name: "Kanishka Lanza", role: "Drone Pilot", img: "/team/team-4.jpg" },
     { name: "Shenal Fernando", role: "Photographer", img: "/team/team-58.jpg" },
