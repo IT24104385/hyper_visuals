@@ -4,12 +4,10 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Instagram, Mail, MessageCircle } from "lucide-react";
-import Script from "next/script";
 
 export default function Contact() {
     return (
         <main className="min-h-screen bg-white">
-            <Script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places,storeLocator&v=beta" async />
             <NavBar />
 
             <section className="pt-40 pb-24 px-6 md:px-12 max-w-6xl mx-auto">
@@ -17,7 +15,7 @@ export default function Contact() {
                     <div>
                         <span className="font-mono text-xs font-bold tracking-widest text-gray-600 uppercase">Inquire</span>
                         <h1 className="text-6xl md:text-8xl font-normal mt-6 mb-12 leading-none text-black">
-                            LET'S <br /> <span className="font-bold">CREATE.</span>
+                            LET&apos;S <br /> <span className="font-bold">CREATE.</span>
                         </h1>
                         <div className="space-y-8 text-lg font-medium text-gray-800">
                             <p>
@@ -39,11 +37,16 @@ export default function Contact() {
 
                             {/* --- GOOGLE MAP SECTION --- */}
                             <div className="mt-12 h-96 w-full bg-gray-200 rounded-xl overflow-hidden relative shadow-sm group">
-                                <gmpx-store-locator
-                                    library-version="beta"
-                                    map-id="DEMO_MAP_ID"
-                                    location-set="default"
-                                ></gmpx-store-locator>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.45932537065!2d79.78616389453124!3d6.922006700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Hyper Visuals Location"
+                                ></iframe>
                             </div>
 
                         </div>

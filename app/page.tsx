@@ -65,7 +65,7 @@ export default function Home() {
                 <div className="max-w-4xl mx-auto space-y-12">
                     {/* Changed text-gray-900 to black and font-weight for better readability */}
                     <h2 className="text-3xl md:text-5xl font-normal leading-tight text-black">
-                        "We are wanderers, explorers of light, driven by a desire to capture fleeting moments and stitch them into a visual legacy."
+                        &ldquo;We are wanderers, explorers of light, driven by a desire to capture fleeting moments and stitch them into a visual legacy.&rdquo;
                     </h2>
                     <Link href="/about" className="inline-block text-xs font-bold tracking-widest uppercase border-b-2 border-black pb-1 hover:text-gray-700 transition-colors text-black">
                         Read Our Story
