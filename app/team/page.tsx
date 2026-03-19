@@ -12,7 +12,8 @@ const team = [
     { name: "Thevindu Gunathilake", role: "Editor", img: "/team/team-6.jpg", link: "https://www.instagram.com/thev1____/" },
     { name: "Minusha Balasooriya", role: "Videographer", img: "/team/team-3.jpg" },
     { name: "Kanishka Lanza", role: "Drone Pilot", img: "/team/team-4.jpg" },
-    //{ name: "Shenal Fernando", role: "Photographer", img: "/team/team-58.jpg" },
+    { name: "Nadeesha Fernando", role: "Photographer", img: "/team/team-6.jpg" },
+//    { name: "Shenal Fernando", role: "Photographer", img: "/team/team-58.jpg" },
     
 ];
 

@@ -3,11 +3,13 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Instagram, Mail, MessageCircle, MapPin } from "lucide-react";
+import { Instagram, Mail, MessageCircle } from "lucide-react";
+import Script from "next/script";
 
 export default function Contact() {
     return (
         <main className="min-h-screen bg-white">
+            <Script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places,storeLocator&v=beta" async />
             <NavBar />
 
             <section className="pt-40 pb-24 px-6 md:px-12 max-w-6xl mx-auto">
@@ -36,25 +38,12 @@ export default function Contact() {
                             </div>
 
                             {/* --- GOOGLE MAP SECTION --- */}
-                            <div className="mt-12 h-64 w-full bg-gray-200 rounded-xl overflow-hidden relative shadow-sm group">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.5863874366!2d79.8211858971408!3d6.921833446006509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1706680000000!5m2!1sen!2slk"
-                                    width="100%"
-                                    height="100%"
-                                    style={{ border: 0, filter: "grayscale(100%) contrast(1.1)" }}
-                                    allowFullScreen
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                    className="transition-all duration-700 group-hover:filter-none"
-                                />
-                                <a
-                                    href="https://share.google/pxbETJCy0f1gitS8o"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="absolute bottom-4 left-4 bg-white px-5 py-3 text-xs font-bold uppercase tracking-widest shadow-lg hover:bg-black hover:text-white transition-colors text-black flex items-center gap-2 rounded-lg"
-                                >
-                                    <MapPin size={14} /> Get Directions
-                                </a>
+                            <div className="mt-12 h-96 w-full bg-gray-200 rounded-xl overflow-hidden relative shadow-sm group">
+                                <gmpx-store-locator
+                                    library-version="beta"
+                                    map-id="DEMO_MAP_ID"
+                                    location-set="default"
+                                ></gmpx-store-locator>
                             </div>
 
                         </div>
