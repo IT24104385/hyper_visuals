@@ -3,7 +3,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Instagram, Mail, MessageCircle } from "lucide-react";
+import { Instagram, Facebook, Youtube, Linkedin, Mail, MessageCircle, Star } from "lucide-react";
 
 export default function Contact() {
     return (
@@ -27,11 +27,26 @@ export default function Contact() {
                                 <a href="mailto:hypervisuals.creative@gmail.com" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
                                     <Mail className="w-5 h-5" /> hypervisuals.creative@gmail.com
                                 </a>
-                                <a href="https://wa.me/94704877689" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                <a href="https://wa.me/94704877689" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
                                     <MessageCircle className="w-5 h-5" /> +94 70 487 7689
                                 </a>
-                                <a href="https://instagram.com/hyper_visuals.lk" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                <a href="https://instagram.com/hyper_visuals.lk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
                                     <Instagram className="w-5 h-5" /> @hyper_visuals.lk
+                                </a>
+                                <a href="https://www.facebook.com/hypervisuals.lk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Facebook className="w-5 h-5" /> Facebook
+                                </a>
+                                <a href="https://www.youtube.com/@HyperVisualslk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Youtube className="w-5 h-5" /> YouTube
+                                </a>
+                                <a href="https://www.tiktok.com/@hyper.visuals.lk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg> TikTok
+                                </a>
+                                <a href="https://www.linkedin.com/company/hyper-visuals-lk/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Linkedin className="w-5 h-5" /> LinkedIn
+                                </a>
+                                <a href="https://g.page/r/CR59x2wBtbxPEBE/review" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Star className="w-5 h-5" /> Leave a Review
                                 </a>
                             </div>
 

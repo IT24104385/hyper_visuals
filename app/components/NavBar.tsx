@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Instagram, Mail, MapPin } from "lucide-react";
+import { Menu, X, Instagram, Facebook, Youtube, Linkedin, Mail, MapPin, Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function NavBar() {
@@ -138,9 +138,24 @@ export default function NavBar() {
                                         <MapPin size={16} /> Negombo, Sri Lanka
                                     </p>
                                 </div>
-                                <div className="flex gap-4 pt-4">
-                                    <a href="https://instagram.com/hyper_visuals.lk" target="_blank" className="text-black hover:scale-110 transition-transform">
+                                <div className="flex flex-wrap gap-4 pt-4">
+                                    <a href="https://instagram.com/hyper_visuals.lk" target="_blank" rel="noopener noreferrer" className="text-black hover:scale-110 transition-transform">
                                         <Instagram size={24} />
+                                    </a>
+                                    <a href="https://www.facebook.com/hypervisuals.lk" target="_blank" rel="noopener noreferrer" className="text-black hover:scale-110 transition-transform">
+                                        <Facebook size={24} />
+                                    </a>
+                                    <a href="https://www.youtube.com/@HyperVisualslk" target="_blank" rel="noopener noreferrer" className="text-black hover:scale-110 transition-transform">
+                                        <Youtube size={24} />
+                                    </a>
+                                    <a href="https://www.tiktok.com/@hyper.visuals.lk" target="_blank" rel="noopener noreferrer" className="text-black hover:scale-110 transition-transform">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/hyper-visuals-lk/" target="_blank" rel="noopener noreferrer" className="text-black hover:scale-110 transition-transform">
+                                        <Linkedin size={24} />
+                                    </a>
+                                    <a href="https://g.page/r/CR59x2wBtbxPEBE/review" target="_blank" rel="noopener noreferrer" className="text-black hover:scale-110 transition-transform">
+                                        <Star size={24} />
                                     </a>
                                 </div>
                             </div>
