@@ -8,60 +8,70 @@ const packages = [
     {
         title: "The Starter Snap",
         subtitle: "Budget",
-        price: "LKR 20,000",
-        description: "Best for: Birthday parties, small gatherings, or clients who only need photos.",
+        price: "LKR 25,000",
+        //description: "Best for: Birthday parties, small gatherings, or clients who only need photos.",
         details: {
             crew: "1 Photographer",
             preProduction: ["Phone consultation to discuss key moments."],
             production: ["Coverage: Up to 5 Hours."],
             postProduction: ["150+ Color-corrected high-res images.", "Delivered via Google Drive/Cloud Link within 7 days."]
         },
-        addOn: "Add Drone for +LKR 8,000"
+        addOn: "Add Drone for +LKR 10,000"
     },
     {
         title: "The Duo Coverage",
         subtitle: "Standard",
-        price: "LKR 35,000",
-        description: "Best for: Engagement parties, homecomings, or simple Events.",
+        price: "LKR 45,000",
+        //description: "Best for: Engagement parties, homecomings, or simple weddings.",
         details: {
             crew: "1 Photographer + 1 Videographer",
             preProduction: ["Shot list creation.", "Coordination with event agenda."],
             production: ["Coverage: Up to 6 Hours.", "Full HD (1080p) Video recording."],
             postProduction: ["150+ Edited Photos.", "3-minute Cinematic Highlight Video.", "Raw footage provided on request."]
         },
-        addOn: "Add Drone for +LKR 8,000"
+        addOn: "Add Drone for +LKR 10,000"
     },
     {
         title: "The Pro Storyteller",
         subtitle: "Premium",
-        price: "LKR 50,000",
-        description: "Best for: Live Music Events or Corporate Events where you need to capture guests and the key people simultaneously.",
+        price: "LKR 65,000",
+        //description: "Best for: Standard Weddings or Corporate Events where you need to capture guests and the main couple simultaneously.",
         details: {
             crew: "2 Photographers + 1 Videographer",
-            note: "(Note: Having a 2nd photographer allows one to focus on the couple/VIPs and the other on candid guest reactions).",
             preProduction: ["Site visit.", "Mood board planning."],
             production: ["Coverage: Up to 6 Hours.", "4K Video Setup (Sony Mirrorless)."],
             postProduction: ["350+ Signature Edited Photos.", "5-minute Highlight Film + Reels."]
         },
-        addOn: "Add Drone for +LKR 8,000"
+        addOn: "Add Drone for +LKR 10,000"
+    },
+    {
+        title: "The Ultimate Coverage",
+        subtitle: "Premium Plus",
+        price: "LKR 125,000",
+        isElite: true,
+        details: {
+            crew: "3 Photographers + 1 Videographer + 1 Drone Operator",
+            preProduction: ["Cinematic Storyboarding.", "Detailed Event Plan."],
+            production: ["Coverage: Full event.", "Main Camera: RED Komodo (Cinema Grade 6K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials)."],
+            postProduction: ["400-500 Edited Retouched Photos", "4 Artist focused 30sec Reels (9:16 Ratio - Instagram & TikTok Optimized) + 5-10 minute Cinematic After movie."]
+        }
     },
     {
         title: "The \"Hyper\" Cinema",
-        subtitle: "Elite - RED Combo Pack",
-        price: "LKR 180,000",
-        description: "Best for: High-end Events, Music Videos, or Luxury Commercial Events. This is your flagship package.",
+        subtitle: "Elite - RED Combo PAck",
+        price: "LKR 245,000",
         isElite: true,
         details: {
-            crew: "3 Photographers + 1 Videographer (Cinematographer) + 1 Drone Operator",
-            preProduction: ["Cinematic Storyboarding.", "Detailed lighting plan."],
-            production: ["Coverage: Full Day.", "Main Camera: RED Komodo (Cinema Grade 6K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials)."],
+            crew: "4 Photographers + 2 Videographer (Cinematographer) + 2 Drone Operators(Steady + FPV)",
+            preProduction: ["Cinematic Storyboarding.", "Detailed Lighting Plan."],
+            production: ["Coverage: Full Day.", "Main Camera: RED Komodo (Cinema Grade 6K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials) + FPV Drone Coverage in 4K."],
             postProduction: ["600+ Edited Retouched Photos + 50 \"Fine Art\" retouched portraits.", "Movie-grade Color Grading (Davinci Resolve).", "1-minute Teaser (Instagram Ready) + 10-15 minute Cinematic Short Film."]
         }
     }
 ];
 
 const addOns = [
-    { item: "Aerial (Drone) Coverage", price: "LKR 10,000", details: "Adds 20-30 mins of flight time for establishing shots. (Included in Elite Package)." },
+    { item: "Aerial (Drone) Coverage", price: "LKR 25,000", details: "Adds 20-30 mins of flight time for establishing shots. (Included in Premium Plus & Elite Packages)." },
     { item: "360 Video Booth", price: "LKR 30,000", details: "Includes slow-motion capture, instant sharing station, and props. Great for guest interaction." }
 ];
 
@@ -79,7 +89,7 @@ export default function Services() {
                 </div>
 
                 {/* PACKAGES GRID */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-32">
                     {packages.map((pkg, i) => (
                         <div key={i} className={`relative flex flex-col justify-between p-8 border ${pkg.isElite ? 'bg-black text-white border-black shadow-2xl scale-105 z-10' : 'bg-white text-gray-900 border-gray-300'} transition-all hover:shadow-xl`}>
                             <div>
@@ -89,13 +99,13 @@ export default function Services() {
                                     <p className="text-3xl font-bold mt-4">{pkg.price}</p>
                                 </div>
 
-                                <p className={`text-sm mb-8 leading-relaxed font-medium ${pkg.isElite ? 'text-gray-200' : 'text-gray-800'}`}>{pkg.description}</p>
+                                {/* <p className={`text-sm mb-8 leading-relaxed font-medium ${pkg.isElite ? 'text-gray-200' : 'text-gray-800'}`}>{pkg.description}</p> */}
 
                                 <div className="space-y-6 text-sm">
                                     <div>
                                         <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Crew</p>
                                         <p className="font-medium">{pkg.details.crew}</p>
-                                        {pkg.details.note && <p className="text-xs mt-1 opacity-80 italic">{pkg.details.note}</p>}
+                                        {/* {pkg.details.note && <p className="text-xs mt-1 opacity-80 italic">{pkg.details.note}</p>} */}
                                     </div>
 
                                     <div>
