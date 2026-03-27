@@ -48,7 +48,6 @@ const packages = [
         title: "The Ultimate Coverage",
         subtitle: "Premium Plus",
         price: "LKR 125,000",
-        isElite: true,
         details: {
             crew: "3 Photographers + 1 Videographer + 1 Drone Operator",
             preProduction: ["Cinematic Storyboarding.", "Detailed Event Plan."],
