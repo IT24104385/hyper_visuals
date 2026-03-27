@@ -40,7 +40,7 @@ const packages = [
             crew: "2 Photographers + 1 Videographer",
             preProduction: ["Site visit.", "Mood board planning."],
             production: ["Coverage: Up to 6 Hours.", "4K Video Setup (Sony Mirrorless)."],
-            postProduction: ["350+ Signature Edited Photos.", "5-minute Highlight Film + Reels."]
+            postProduction: ["300+ Signature Edited Photos.", "5-minute Highlight Film + Reels."]
         },
         addOn: "Add Drone for +LKR 10,000"
     },
@@ -50,19 +50,19 @@ const packages = [
         price: "LKR 125,000",
         details: {
             crew: "3 Photographers + 1 Videographer + 1 Drone Operator",
-            preProduction: ["Cinematic Storyboarding.", "Detailed Event Plan."],
-            production: ["Coverage: Full event.", "Main Camera: RED Komodo (Cinema Grade 6K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials)."],
+            preProduction: ["Site visit.", "Event Plan."],
+            production: ["Coverage: Full event.", "Main Camera: Sony Fx3 Rig (Cinema Grade 4K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials)."],
             postProduction: ["400-500 Edited Retouched Photos", "4 Artist focused 30sec Reels (9:16 Ratio - Instagram & TikTok Optimized) + 5-10 minute Cinematic After movie."]
         }
     },
     {
         title: "The \"Hyper\" Cinema",
         subtitle: "Elite - RED Combo PAck",
-        price: "LKR 245,000",
+        price: "LKR 260,000",
         isElite: true,
         details: {
-            crew: "4 Photographers + 2 Videographer (Cinematographer) + 2 Drone Operators(Steady + FPV)",
-            preProduction: ["Cinematic Storyboarding.", "Detailed Lighting Plan."],
+            crew: "3 Photographers + 3 Videographers (2 Cinematographers) + 2 Drone Operators(Steady + FPV)",
+            preProduction: ["Cinematic Storyboarding.", "Detailed Lighting and Event Plan."],
             production: ["Coverage: Full Day.", "Main Camera: RED Komodo (Cinema Grade 6K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials) + FPV Drone Coverage in 4K."],
             postProduction: ["600+ Edited Retouched Photos + 50 \"Fine Art\" retouched portraits.", "Movie-grade Color Grading (Davinci Resolve).", "1-minute Teaser (Instagram Ready) + 10-15 minute Cinematic Short Film."]
         }
@@ -146,20 +146,20 @@ export default function Services() {
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                            <tr className="border-b-2 border-black">
-                                <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black w-1/3">Item</th>
-                                <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black w-1/6">Price</th>
-                                <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black">Details</th>
-                            </tr>
+                                <tr className="border-b-2 border-black">
+                                    <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black w-1/3">Item</th>
+                                    <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black w-1/6">Price</th>
+                                    <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black">Details</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            {addOns.map((addon, index) => (
-                                <tr key={index} className="border-b border-gray-300 hover:bg-gray-100 transition-colors">
-                                    <td className="py-6 pr-8 font-bold text-black">{addon.item}</td>
-                                    <td className="py-6 pr-8 font-mono text-sm font-bold whitespace-nowrap text-black">{addon.price}</td>
-                                    <td className="py-6 text-sm text-gray-900 font-medium leading-relaxed">{addon.details}</td>
-                                </tr>
-                            ))}
+                                {addOns.map((addon, index) => (
+                                    <tr key={index} className="border-b border-gray-300 hover:bg-gray-100 transition-colors">
+                                        <td className="py-6 pr-8 font-bold text-black">{addon.item}</td>
+                                        <td className="py-6 pr-8 font-mono text-sm font-bold whitespace-nowrap text-black">{addon.price}</td>
+                                        <td className="py-6 text-sm text-gray-900 font-medium leading-relaxed">{addon.details}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>
