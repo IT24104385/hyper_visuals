@@ -1,148 +1,112 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { Instagram, Facebook, Youtube, Linkedin, Mail, MessageCircle, Star, MapPin } from "lucide-react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-
-const socials = [
-  { href: "mailto:hypervisuals.creative@gmail.com",               Icon: Mail,          label: "hypervisuals.creative@gmail.com" },
-  { href: "https://wa.me/94704877689",                             Icon: MessageCircle, label: "+94 70 487 7689" },
-  { href: "https://instagram.com/hyper_visuals.lk",               Icon: Instagram,     label: "@hyper_visuals.lk" },
-  { href: "https://www.facebook.com/hypervisuals.lk",             Icon: Facebook,      label: "Facebook" },
-  { href: "https://www.youtube.com/@HyperVisualslk",              Icon: Youtube,       label: "YouTube" },
-  { href: "https://www.linkedin.com/company/hyper-visuals-lk/",   Icon: Linkedin,      label: "LinkedIn" },
-  { href: "https://g.page/r/CR59x2wBtbxPEBE/review",              Icon: Star,          label: "Leave a Review" },
-];
-
-const inputCls = {
-  width: "100%",
-  background: "transparent",
-  border: "none",
-  borderBottom: "1px solid #2a2a2a",
-  padding: "12px 0",
-  color: "#f0ede8",
-  fontFamily: "var(--font-sans)",
-  fontSize: "15px",
-  fontWeight: 300,
-  outline: "none",
-  transition: "border-color 0.3s",
-};
+import { Instagram, Facebook, Youtube, Linkedin, Mail, MessageCircle, Star } from "lucide-react";
 
 export default function Contact() {
-  return (
-    <main style={{ background: "#050505", color: "#f0ede8", minHeight: "100vh" }}>
-      <NavBar />
+    return (
+        <main className="min-h-screen bg-white">
+            <NavBar />
 
-      <section className="pt-48 pb-40 px-6 md:px-12 max-w-[1600px] mx-auto">
-        <div className="grid md:grid-cols-2 gap-24 md:gap-40">
+            <section className="pt-40 pb-24 px-6 md:px-12 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-24">
+                    <div>
+                        <span className="font-mono text-xs font-bold tracking-widest text-gray-600 uppercase">Inquire</span>
+                        <h1 className="text-6xl md:text-8xl font-normal mt-6 mb-12 leading-none text-black">
+                            LET&apos;S <br /> <span className="font-bold">CREATE.</span>
+                        </h1>
+                        <div className="space-y-8 text-lg font-medium text-gray-800">
+                            <p>
+                                We take on a limited number of weddings and events each year to ensure
+                                the highest quality of work and attention to detail.
+                            </p>
 
-          {/* ── Left: info ── */}
-          <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
-            <p className="font-mono text-[11px] tracking-[0.4em] uppercase mb-8" style={{ color: "#c9a96e" }}>Inquire</p>
+                            <div className="pt-8 space-y-4">
+                                <a href="mailto:hypervisuals.creative@gmail.com" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Mail className="w-5 h-5" /> hypervisuals.creative@gmail.com
+                                </a>
+                                <a href="https://wa.me/94704877689" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <MessageCircle className="w-5 h-5" /> +94 70 487 7689
+                                </a>
+                                <a href="https://instagram.com/hyper_visuals.lk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Instagram className="w-5 h-5" /> @hyper_visuals.lk
+                                </a>
+                                <a href="https://www.facebook.com/hypervisuals.lk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Facebook className="w-5 h-5" /> Facebook
+                                </a>
+                                <a href="https://www.youtube.com/@HyperVisualslk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Youtube className="w-5 h-5" /> YouTube
+                                </a>
+                                <a href="https://www.tiktok.com/@hyper.visuals.lk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg> TikTok
+                                </a>
+                                <a href="https://www.linkedin.com/company/hyper-visuals-lk/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Linkedin className="w-5 h-5" /> LinkedIn
+                                </a>
+                                <a href="https://g.page/r/CR59x2wBtbxPEBE/review" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black hover:text-gray-600 transition-colors font-bold">
+                                    <Star className="w-5 h-5" /> Leave a Review
+                                </a>
+                            </div>
 
-            <div className="overflow-hidden mb-4">
-              <h1 className="text-6xl md:text-8xl font-light tracking-tighter leading-none" style={{ color: "#f0ede8" }}>
-                LET&apos;S
-              </h1>
-            </div>
-            <div className="overflow-hidden mb-16">
-              <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none italic"
-                  style={{ color: "#c9a96e", fontFamily: "var(--font-serif)" }}>
-                CREATE.
-              </h1>
-            </div>
+                            {/* --- GOOGLE MAP SECTION --- */}
+                            <div className="mt-12 h-96 w-full bg-gray-200 rounded-xl overflow-hidden relative shadow-sm group">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.45932537065!2d79.78616389453124!3d6.922006700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Hyper Visuals Location"
+                                ></iframe>
+                            </div>
 
-            <p className="text-base font-light leading-relaxed mb-12 max-w-md" style={{ color: "#666" }}>
-              We take on a limited number of weddings and events each year to ensure the highest quality of work and attention to detail.
-            </p>
+                        </div>
+                    </div>
 
-            <div className="space-y-4">
-              {socials.map(({ href, Icon, label }) => (
-                <a key={href} href={href} target={href.startsWith("mailto") || href.startsWith("https://wa") ? undefined : "_blank"}
-                   rel="noopener noreferrer"
-                   className="flex items-center gap-4 text-sm font-light transition-colors hover:text-[#c9a96e]"
-                   style={{ color: "#666" }}>
-                  <Icon size={15} className="flex-shrink-0" style={{ color: "#c9a96e" }} />
-                  {label}
-                </a>
-              ))}
-            </div>
+                    <div className="bg-gray-100 p-12 rounded-xl">
+                        <form action="https://formsubmit.co/hypervisuals.creative@gmail.com" method="POST" className="space-y-12">
+                            <input type="hidden" name="_subject" value="New Inquiry - Hyper Visuals" />
+                            <input type="text" name="_honey" className="hidden" />
 
-            <div className="flex items-start gap-3 mt-10 pt-10 text-sm font-light" style={{ color: "#555", borderTop: "1px solid #1c1c1c" }}>
-              <MapPin size={14} className="mt-1 flex-shrink-0" style={{ color: "#c9a96e" }} />
-              Negombo, Sri Lanka
-            </div>
-          </motion.div>
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold font-mono uppercase text-gray-700">Name</label>
+                                <input type="text" name="name" required className="w-full bg-transparent border-b-2 border-gray-400 py-3 text-black font-medium focus:outline-none focus:border-black transition-colors placeholder-gray-500" placeholder="John Doe" />
+                            </div>
 
-          {/* ── Right: form ── */}
-          <motion.div initial={{ x: 40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1, delay: 0.15 }}>
-            <form action="https://formsubmit.co/hypervisuals.creative@gmail.com" method="POST" className="space-y-10">
-              <input type="hidden" name="_subject" value="New Inquiry — Hyper Visuals" />
-              <input type="text" name="_honey" className="hidden" />
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold font-mono uppercase text-gray-700">Email</label>
+                                <input type="email" name="email" required className="w-full bg-transparent border-b-2 border-gray-400 py-3 text-black font-medium focus:outline-none focus:border-black transition-colors placeholder-gray-500" placeholder="john@example.com" />
+                            </div>
 
-              {[
-                { name: "name",    type: "text",  label: "Name",  placeholder: "John Doe"          },
-                { name: "email",   type: "email", label: "Email", placeholder: "john@example.com"  },
-              ].map((f) => (
-                <div key={f.name}>
-                  <label className="block font-mono text-[10px] tracking-[0.35em] uppercase mb-3" style={{ color: "#555" }}>{f.label}</label>
-                  <input type={f.type} name={f.name} required placeholder={f.placeholder}
-                         style={{ ...inputCls }}
-                         onFocus={e => (e.target as HTMLInputElement).style.borderBottomColor = "#c9a96e"}
-                         onBlur={e  => (e.target as HTMLInputElement).style.borderBottomColor = "#2a2a2a"} />
+                            <div className="grid grid-cols-2 gap-8">
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold font-mono uppercase text-gray-700">Event Date</label>
+                                    <input type="date" name="date" className="w-full bg-transparent border-b-2 border-gray-400 py-3 text-black font-medium focus:outline-none focus:border-black transition-colors" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold font-mono uppercase text-gray-700">Location</label>
+                                    <input type="text" name="location" className="w-full bg-transparent border-b-2 border-gray-400 py-3 text-black font-medium focus:outline-none focus:border-black transition-colors placeholder-gray-500" placeholder="City, Venue" />
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold font-mono uppercase text-gray-700">Tell us your story</label>
+                                <textarea name="message" required className="w-full bg-transparent border-b-2 border-gray-400 py-3 h-32 text-black font-medium resize-none focus:outline-none focus:border-black transition-colors placeholder-gray-500" placeholder="What are you envisioning?"></textarea>
+                            </div>
+
+                            <button type="submit" className="group flex items-center gap-4 text-xs font-bold tracking-widest uppercase hover:opacity-70 transition-opacity pt-4 text-black">
+                                Send Inquiry <span className="w-12 h-0.5 bg-black group-hover:w-20 transition-all"></span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-              ))}
+            </section>
 
-              <div className="grid grid-cols-2 gap-8">
-                {[
-                  { name: "date",     type: "date", label: "Event Date", placeholder: "" },
-                  { name: "location", type: "text", label: "Location",   placeholder: "City, Venue" },
-                ].map((f) => (
-                  <div key={f.name}>
-                    <label className="block font-mono text-[10px] tracking-[0.35em] uppercase mb-3" style={{ color: "#555" }}>{f.label}</label>
-                    <input type={f.type} name={f.name} placeholder={f.placeholder}
-                           style={{ ...inputCls }}
-                           onFocus={e => (e.target as HTMLInputElement).style.borderBottomColor = "#c9a96e"}
-                           onBlur={e  => (e.target as HTMLInputElement).style.borderBottomColor = "#2a2a2a"} />
-                  </div>
-                ))}
-              </div>
-
-              <div>
-                <label className="block font-mono text-[10px] tracking-[0.35em] uppercase mb-3" style={{ color: "#555" }}>Tell us your story</label>
-                <textarea name="message" required placeholder="What are you envisioning?"
-                          rows={5}
-                          style={{ ...inputCls, resize: "none", height: "auto" }}
-                          onFocus={e => (e.target as HTMLTextAreaElement).style.borderBottomColor = "#c9a96e"}
-                          onBlur={e  => (e.target as HTMLTextAreaElement).style.borderBottomColor = "#2a2a2a"} />
-              </div>
-
-              <button type="submit"
-                      className="group flex items-center gap-5 font-mono text-[11px] tracking-[0.3em] uppercase transition-colors hover:text-[#c9a96e]"
-                      style={{ color: "#888", paddingTop: "1rem", borderTop: "1px solid #1c1c1c" }}>
-                Send Inquiry
-                <span className="inline-block h-px transition-all duration-500 group-hover:w-16"
-                      style={{ width: "2.5rem", background: "currentColor" }} />
-              </button>
-            </form>
-
-            {/* Map */}
-            <div className="mt-16 overflow-hidden" style={{ height: "320px" }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.45932537065!2d79.78616389453124!3d6.922006700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                width="100%" height="100%" style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg) brightness(0.8)" }}
-                allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-                title="Hyper Visuals Location"
-              />
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
-
-      <Footer />
-    </main>
-  );
+            <Footer />
+        </main>
+    );
 }
