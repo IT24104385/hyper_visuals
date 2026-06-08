@@ -1,172 +1,198 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import MagneticButton from "../components/MagneticButton";
 
 const packages = [
-    {
-        title: "The Starter Snap",
-        subtitle: "Budget",
-        price: "LKR 25,000",
-        //description: "Best for: Birthday parties, small gatherings, or clients who only need photos.",
-        details: {
-            crew: "1 Photographer",
-            preProduction: ["Phone consultation to discuss key moments."],
-            production: ["Coverage: Up to 5 Hours."],
-            postProduction: ["150+ Color-corrected high-res images.", "Delivered via Google Drive/Cloud Link within 7 days."]
-        },
-        addOn: "Add Drone for +LKR 10,000"
-    },
-    {
-        title: "The Duo Coverage",
-        subtitle: "Standard",
-        price: "LKR 45,000",
-        //description: "Best for: Engagement parties, homecomings, or simple weddings.",
-        details: {
-            crew: "1 Photographer + 1 Videographer",
-            preProduction: ["Shot list creation.", "Coordination with event agenda."],
-            production: ["Coverage: Up to 6 Hours.", "Full HD (1080p) Video recording."],
-            postProduction: ["150+ Edited Photos.", "3-minute Cinematic Highlight Video.", "Raw footage provided on request."]
-        },
-        addOn: "Add Drone for +LKR 10,000"
-    },
-    {
-        title: "The Pro Storyteller",
-        subtitle: "Premium",
-        price: "LKR 65,000",
-        //description: "Best for: Standard Weddings or Corporate Events where you need to capture guests and the main couple simultaneously.",
-        details: {
-            crew: "2 Photographers + 1 Videographer",
-            preProduction: ["Site visit.", "Mood board planning."],
-            production: ["Coverage: Up to 6 Hours.", "4K Video Setup (Sony Mirrorless)."],
-            postProduction: ["300+ Signature Edited Photos.", "5-minute Highlight Film + Reels."]
-        },
-        addOn: "Add Drone for +LKR 10,000"
-    },
-    {
-        title: "The Ultimate Coverage",
-        subtitle: "Premium Plus",
-        price: "LKR 125,000",
-        details: {
-            crew: "3 Photographers + 1 Videographer + 1 Drone Operator",
-            preProduction: ["Site visit.", "Event Plan."],
-            production: ["Coverage: Full event.", "Main Camera: Sony Fx3 Rig (Cinema Grade 4K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials)."],
-            postProduction: ["400-500 Edited Retouched Photos", "4 Artist focused 30sec Reels (9:16 Ratio - Instagram & TikTok Optimized) + 5-10 minute Cinematic After movie."]
-        }
-    },
-    {
-        title: "The \"Hyper\" Cinema",
-        subtitle: "Elite - RED Combo PAck",
-        price: "LKR 260,000",
-        isElite: true,
-        details: {
-            crew: "3 Photographers + 3 Videographers (2 Cinematographers) + 2 Drone Operators(Steady + FPV)",
-            preProduction: ["Cinematic Storyboarding.", "Detailed Lighting and Event Plan."],
-            production: ["Coverage: Full Day.", "Main Camera: RED Komodo (Cinema Grade 6K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials) + FPV Drone Coverage in 4K."],
-            postProduction: ["600+ Edited Retouched Photos + 50 \"Fine Art\" retouched portraits.", "Movie-grade Color Grading (Davinci Resolve).", "1-minute Teaser (Instagram Ready) + 10-15 minute Cinematic Short Film."]
-        }
-    }
+  {
+    title: "Starter Snap", tier: "Budget",      price: "25,000",
+    crew: "1 Photographer",
+    pre:  ["Phone consultation on key moments"],
+    prod: ["Coverage: Up to 5 Hours"],
+    post: ["150+ colour-corrected high-res images", "Delivered within 7 days via cloud link"],
+    addon: "Add Drone +LKR 10,000",
+  },
+  {
+    title: "Duo Coverage", tier: "Standard",    price: "45,000",
+    crew: "1 Photographer + 1 Videographer",
+    pre:  ["Shot list creation", "Coordination with event agenda"],
+    prod: ["Coverage: Up to 6 Hours", "Full HD 1080p video"],
+    post: ["150+ Edited Photos", "3-min Cinematic Highlight Video", "Raw footage on request"],
+    addon: "Add Drone +LKR 10,000",
+  },
+  {
+    title: "Pro Storyteller", tier: "Premium", price: "65,000",
+    crew: "2 Photographers + 1 Videographer",
+    pre:  ["Site visit", "Mood board planning"],
+    prod: ["Coverage: Up to 6 Hours", "4K Video Setup (Sony Mirrorless)"],
+    post: ["300+ Signature Edited Photos", "5-min Highlight Film + Reels"],
+    addon: "Add Drone +LKR 10,000",
+  },
+  {
+    title: "Ultimate Coverage", tier: "Premium Plus", price: "125,000",
+    crew: "3 Photographers + 1 Videographer + 1 Drone Operator",
+    pre:  ["Site visit", "Full event plan"],
+    prod: ["Full event coverage", "Sony Fx3 Rig Cinema Grade 4K", "Professional Drone (4K Aerials)"],
+    post: ["400–500 Edited Retouched Photos", "4 Artist Reels (9:16) + 5–10 min After Movie"],
+  },
+  {
+    title: "Hyper Cinema",   tier: "Elite — RED Combo", price: "260,000",
+    crew: "3 Photographers + 3 Videographers + 2 Drone Operators (Steady + FPV)",
+    pre:  ["Cinematic storyboarding", "Detailed lighting & event plan"],
+    prod: ["Full Day Coverage", "RED Komodo 6K Cinema", "4K Aerial + FPV Drone"],
+    post: ["600+ Edited Photos + 50 Fine Art Portraits", "Davinci Resolve Movie-grade Grade", "1-min Teaser + 10–15 min Cinematic Short Film"],
+    elite: true,
+  },
 ];
 
 const addOns = [
-    { item: "Aerial (Drone) Coverage", price: "LKR 25,000", details: "Adds 20-30 mins of flight time for establishing shots. (Included in Premium Plus & Elite Packages)." },
-    { item: "360 Video Booth", price: "LKR 30,000", details: "Includes slow-motion capture, instant sharing station, and props. Great for guest interaction." }
+  { item: "Aerial (Drone) Coverage", price: "LKR 25,000", note: "20–30 min flight, establishing shots. Included in Premium Plus & Elite." },
+  { item: "360 Video Booth",         price: "LKR 30,000", note: "Slow-motion capture, instant sharing station & props." },
 ];
 
 export default function Services() {
-    return (
-        <main className="min-h-screen bg-[#fcfcfc]">
-            <NavBar />
+  return (
+    <main style={{ background: "#050505", color: "#f0ede8", minHeight: "100vh" }}>
+      <NavBar />
 
-            <section className="pt-40 pb-24 px-6 md:px-12 max-w-[1800px] mx-auto">
-                <div className="mb-24 text-center md:text-left">
-                    <h1 className="text-6xl md:text-8xl font-normal tracking-tighter text-black">PACKAGES</h1>
-                    <p className="font-mono text-sm tracking-widest text-gray-700 mt-4 uppercase max-w-2xl font-medium">
-                        Curated experiences tailored for every scale. Competitive entry-level pricing for premium production value.
-                    </p>
-                </div>
+      {/* Header */}
+      <section className="pt-48 pb-24 px-6 md:px-12 max-w-[1800px] mx-auto">
+        <div className="overflow-hidden mb-4">
+          <motion.h1 initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1] }}
+                     className="text-6xl md:text-9xl font-light tracking-tighter leading-none">
+            PACKAGES
+          </motion.h1>
+        </div>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
+                  className="font-mono text-[11px] tracking-[0.35em] uppercase max-w-xl mt-6" style={{ color: "#888" }}>
+          Curated experiences tailored for every scale. Competitive entry-level pricing for premium production value.
+        </motion.p>
+      </section>
 
-                {/* PACKAGES GRID */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-32">
-                    {packages.map((pkg, i) => (
-                        <div key={i} className={`relative flex flex-col justify-between p-8 border ${pkg.isElite ? 'bg-black text-white border-black shadow-2xl scale-105 z-10' : 'bg-white text-gray-900 border-gray-300'} transition-all hover:shadow-xl`}>
-                            <div>
-                                <div className="mb-6 border-b border-opacity-20 pb-6" style={{ borderColor: pkg.isElite ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.2)' }}>
-                                    <h3 className="text-2xl font-medium mb-1">{pkg.title}</h3>
-                                    <span className={`text-xs font-bold font-mono tracking-widest uppercase ${pkg.isElite ? 'text-gray-300' : 'text-gray-600'}`}>{pkg.subtitle}</span>
-                                    <p className="text-3xl font-bold mt-4">{pkg.price}</p>
-                                </div>
+      {/* Cards */}
+      <section className="pb-40 px-6 md:px-12 max-w-[1800px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {packages.map((pkg, i) => (
+            <PackageCard key={i} pkg={pkg} i={i} />
+          ))}
+        </div>
+      </section>
 
-                                {/* <p className={`text-sm mb-8 leading-relaxed font-medium ${pkg.isElite ? 'text-gray-200' : 'text-gray-800'}`}>{pkg.description}</p> */}
+      {/* Add-ons */}
+      <section className="pb-40 px-6 md:px-12 max-w-[1800px] mx-auto" style={{ borderTop: "1px solid #1c1c1c", paddingTop: "5rem" }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+                   transition={{ duration: 0.8 }}
+                   className="text-3xl font-light tracking-tighter mb-14" style={{ color: "#f0ede8" }}>
+          Optional Add-Ons
+        </motion.h2>
+        <div className="space-y-0" style={{ borderTop: "1px solid #1c1c1c" }}>
+          {addOns.map((a, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }} transition={{ duration: 0.8, delay: i * 0.1 }}
+                        className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8"
+                        style={{ borderBottom: "1px solid #1c1c1c" }}>
+              <span className="text-lg font-light" style={{ color: "#f0ede8" }}>{a.item}</span>
+              <span className="font-mono text-sm font-bold" style={{ color: "#c9a96e" }}>{a.price}</span>
+              <span className="text-sm font-light" style={{ color: "#666" }}>{a.note}</span>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-                                <div className="space-y-6 text-sm">
-                                    <div>
-                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Crew</p>
-                                        <p className="font-medium">{pkg.details.crew}</p>
-                                        {/* {pkg.details.note && <p className="text-xs mt-1 opacity-80 italic">{pkg.details.note}</p>} */}
-                                    </div>
+      {/* CTA */}
+      <section className="pb-40 px-6 md:px-12 text-center" style={{ borderTop: "1px solid #1a1a1a", paddingTop: "5rem" }}>
+        <p className="font-mono text-[11px] tracking-[0.4em] uppercase mb-8" style={{ color: "#444" }}>Custom requirements?</p>
+        <MagneticButton>
+          <Link href="/contact"
+                className="inline-flex items-center gap-4 px-12 py-5 font-mono text-[11px] tracking-[0.3em] uppercase transition-all duration-300 border"
+                style={{ borderColor: "#c9a96e", color: "#c9a96e" }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background="#c9a96e"; el.style.color="#050505"; }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background="transparent"; el.style.color="#c9a96e"; }}>
+            Let&apos;s Discuss
+          </Link>
+        </MagneticButton>
+      </section>
 
-                                    <div>
-                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Pre-Production</p>
-                                        <ul className="list-disc list-inside space-y-1 opacity-100 font-medium">
-                                            {pkg.details.preProduction.map((item, idx) => <li key={idx}>{item}</li>)}
-                                        </ul>
-                                    </div>
+      <Footer />
+    </main>
+  );
+}
 
-                                    <div>
-                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Production</p>
-                                        <ul className="list-disc list-inside space-y-1 opacity-100 font-medium">
-                                            {pkg.details.production.map((item, idx) => <li key={idx}>{item}</li>)}
-                                        </ul>
-                                    </div>
+function PackageCard({ pkg, i }: { pkg: (typeof packages)[0]; i: number }) {
+  const [open, setOpen] = useState(false);
+  const elite = pkg.elite;
 
-                                    <div>
-                                        <p className="font-bold mb-2 text-xs uppercase tracking-wide opacity-100">Post-Production</p>
-                                        <ul className="list-disc list-inside space-y-1 opacity-100 font-medium">
-                                            {pkg.details.postProduction.map((item, idx) => <li key={idx}>{item}</li>)}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+  return (
+    <motion.div initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }} transition={{ duration: 0.8, delay: i * 0.07 }}
+                className="relative flex flex-col p-8 transition-all duration-300"
+                style={{
+                  background: elite ? "#0e0c09" : "#0a0a0a",
+                  border: elite ? "1px solid #c9a96e" : "1px solid #1c1c1c",
+                  transform: elite ? "scale(1.02)" : "scale(1)",
+                }}>
+      {elite && (
+        <span className="absolute top-4 right-4 font-mono text-[9px] tracking-[0.3em] uppercase px-3 py-1"
+              style={{ background: "#c9a96e", color: "#050505" }}>
+          Elite
+        </span>
+      )}
 
-                            {pkg.addOn && (
-                                <div className={`mt-8 pt-6 border-t ${pkg.isElite ? 'border-white/30' : 'border-black/20'}`}>
-                                    <p className="text-xs font-bold font-mono uppercase tracking-widest opacity-80 mb-2">Optional Add-On</p>
-                                    <p className="font-bold">{pkg.addOn}</p>
-                                </div>
-                            )}
-                        </div>
+      <div className="mb-8 pb-6" style={{ borderBottom: "1px solid #1c1c1c" }}>
+        <p className="font-mono text-[10px] tracking-[0.35em] uppercase mb-2" style={{ color: elite ? "#c9a96e" : "#555" }}>
+          {pkg.tier}
+        </p>
+        <h3 className="text-2xl font-light tracking-tight mb-4" style={{ color: "#f0ede8" }}>{pkg.title}</h3>
+        <div className="flex items-baseline gap-1">
+          <span className="font-mono text-xs" style={{ color: "#555" }}>LKR</span>
+          <span className="text-4xl font-light tracking-tighter" style={{ color: elite ? "#c9a96e" : "#f0ede8" }}>
+            {pkg.price}
+          </span>
+        </div>
+      </div>
+
+      <div className="flex-1 space-y-5 text-sm">
+        <div>
+          <p className="font-mono text-[9px] tracking-[0.3em] uppercase mb-2" style={{ color: "#555" }}>Crew</p>
+          <p className="font-light" style={{ color: "#aaa" }}>{pkg.crew}</p>
+        </div>
+
+        {open && (
+          <>
+            {[["Pre-Production", pkg.pre], ["Production", pkg.prod], ["Post-Production", pkg.post]].map(
+              ([label, items]) => (
+                <div key={label as string}>
+                  <p className="font-mono text-[9px] tracking-[0.3em] uppercase mb-2" style={{ color: "#555" }}>{label}</p>
+                  <ul className="space-y-1">
+                    {(items as string[]).map((it, j) => (
+                      <li key={j} className="flex items-start gap-2 font-light" style={{ color: "#888" }}>
+                        <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#c9a96e" }} />
+                        {it}
+                      </li>
                     ))}
+                  </ul>
                 </div>
+              )
+            )}
+            {pkg.addon && (
+              <p className="font-mono text-[10px] tracking-wide pt-3" style={{ color: "#c9a96e", borderTop: "1px solid #1c1c1c" }}>
+                {pkg.addon}
+              </p>
+            )}
+          </>
+        )}
+      </div>
 
-                {/* ADD ONS TABLE */}
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-normal mb-12 text-center tracking-tight text-black">OPTIONAL ADD-ONS</h2>
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left border-collapse">
-                            <thead>
-                                <tr className="border-b-2 border-black">
-                                    <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black w-1/3">Item</th>
-                                    <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black w-1/6">Price</th>
-                                    <th className="py-4 font-bold font-mono text-xs uppercase tracking-widest text-black">Details</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {addOns.map((addon, index) => (
-                                    <tr key={index} className="border-b border-gray-300 hover:bg-gray-100 transition-colors">
-                                        <td className="py-6 pr-8 font-bold text-black">{addon.item}</td>
-                                        <td className="py-6 pr-8 font-mono text-sm font-bold whitespace-nowrap text-black">{addon.price}</td>
-                                        <td className="py-6 text-sm text-gray-900 font-medium leading-relaxed">{addon.details}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <Footer />
-        </main>
-    );
+      <button onClick={() => setOpen(!open)}
+              className="mt-8 pt-4 flex items-center gap-3 font-mono text-[10px] tracking-[0.25em] uppercase transition-colors hover:text-[#c9a96e]"
+              style={{ borderTop: "1px solid #1c1c1c", color: "#555" }}>
+        {open ? "Show Less" : "View Details"}
+        <span className="inline-block transition-transform duration-300" style={{ transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
+      </button>
+    </motion.div>
+  );
 }
