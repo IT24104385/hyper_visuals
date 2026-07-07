@@ -7,11 +7,15 @@ import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
 const works = [
-    { src: "/gallery/gallery-1.jpg", title: "Riya & Arjun", location: "Udaipur, India", type: "Wedding" },
-    { src: "/gallery/gallery-2.jpg", title: "Neon Dreams", location: "Colombo, SL", type: "Festival" },
-    { src: "/gallery/gallery-3.jpg", title: "Tech Summit", location: "Singapore", type: "Corporate" },
-    { src: "/gallery/gallery-4.jpg", title: "Sarah & Tom", location: "Bentota, SL", type: "Elopement" },
-    { src: "/gallery/gallery-5.jpg", title: "Fashion Week", location: "Dubai, UAE", type: "Commercial" },
+    { src: "/gallery/gallery-1.jpg", title: "MarisAgni", location: "Negombo, SL", type: "Wedding" },
+    { src: "/gallery/gallery-2.jpg", title: "MarisAgni", location: "Colombo, SL", type: "Festival" },
+    { src: "/gallery/gallery-3.jpg", title: "MarisAgni", location: "Negombo", type: "Corporate" },
+    { src: "/gallery/gallery-4.jpg", title: "MarisAgni", location: "Negombo, SL", type: "Elopement" },
+    { src: "/gallery/gallery-5.jpg", title: "MarisAgni", location: "Negombo, UAE", type: "Commercial" },
+    { src: "/gallery/gallery-6.jpg", title: "GreenFiesta", location: "NSBM", type: "Commercial" },
+    { src: "/gallery/gallery-7.jpg", title: "GreenFiesta", location: "NSBM", type: "Commercial" },
+    { src: "/gallery/gallery-8.jpg", title: "GreenFiesta", location: "NSBM", type: "Commercial" },
+    { src: "/gallery/gallery-9.jpg", title: "GreenFiesta", location: "NSBM", type: "Commercial" },
 ];
 
 export default function Work() {
