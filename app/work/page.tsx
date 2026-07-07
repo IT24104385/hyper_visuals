@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
 const works = [
+    { src: "/gallery/gallery-0.jpg", title: "MarisAgni", location: "Negombo, SL", type: "Wedding" },
     { src: "/gallery/gallery-1.jpg", title: "MarisAgni", location: "Negombo, SL", type: "Wedding" },
     { src: "/gallery/gallery-2.jpg", title: "MarisAgni", location: "Colombo, SL", type: "Festival" },
     { src: "/gallery/gallery-3.jpg", title: "MarisAgni", location: "Negombo", type: "Corporate" },
