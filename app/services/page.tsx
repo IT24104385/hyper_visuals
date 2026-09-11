@@ -14,7 +14,7 @@ const packages = [
             crew: "1 Photographer",
             preProduction: ["Phone consultation to discuss key moments."],
             production: ["Coverage: Up to 5 Hours."],
-            postProduction: ["150+ Color-corrected high-res images.", "Delivered via Google Drive/Cloud Link within 7 days."]
+            postProduction: ["100+ Color-corrected high-res images.", "Delivered via Google Drive/Cloud Link within 7 days."]
         },
         addOn: "Add Drone for +LKR 10,000"
     },
@@ -40,14 +40,14 @@ const packages = [
             crew: "2 Photographers + 1 Videographer",
             preProduction: ["Site visit.", "Mood board planning."],
             production: ["Coverage: Up to 6 Hours.", "4K Video Setup (Sony Mirrorless)."],
-            postProduction: ["300+ Signature Edited Photos.", "5-minute Highlight Film + Reels."]
+            postProduction: ["200+ Signature Edited Photos.", "5-minute Highlight Film + Reels."]
         },
         addOn: "Add Drone for +LKR 10,000"
     },
     {
         title: "The Ultimate Coverage",
         subtitle: "Premium Plus",
-        price: "LKR 125,000",
+        price: "LKR 135,000",
         details: {
             crew: "3 Photographers + 1 Videographer + 1 Drone Operator",
             preProduction: ["Site visit.", "Event Plan."],
@@ -57,21 +57,21 @@ const packages = [
     },
     {
         title: "The \"Hyper\" Cinema",
-        subtitle: "Elite - RED Combo PAck",
-        price: "LKR 260,000",
+        subtitle: "Elite - Combo Pack",
+        price: "LKR 350,000",
         isElite: true,
         details: {
             crew: "3 Photographers + 3 Videographers (2 Cinematographers) + 2 Drone Operators(Steady + FPV)",
             preProduction: ["Cinematic Storyboarding.", "Detailed Lighting and Event Plan."],
             production: ["Coverage: Full Day.", "Main Camera: RED Komodo (Cinema Grade 6K Quality).", "Aerial: Professional Drone Pilot included (4K Aerials) + FPV Drone Coverage in 4K."],
-            postProduction: ["600+ Edited Retouched Photos + 50 \"Fine Art\" retouched portraits.", "Movie-grade Color Grading (Davinci Resolve).", "1-minute Teaser (Instagram Ready) + 10-15 minute Cinematic Short Film."]
+            postProduction: ["500+ Edited Retouched Photos + 50 \"Fine Art\" retouched portraits.", "Movie-grade Color Grading (Davinci Resolve).", "1-minute Teaser (Instagram Ready) + 10-15 minute Cinematic Short Film."]
         }
     }
 ];
 
 const addOns = [
     { item: "Aerial (Drone) Coverage", price: "LKR 25,000", details: "Adds 20-30 mins of flight time for establishing shots. (Included in Premium Plus & Elite Packages)." },
-    { item: "360 Video Booth", price: "LKR 30,000", details: "Includes slow-motion capture, instant sharing station, and props. Great for guest interaction." }
+    { item: "360 Video Booth", price: "LKR 35,000", details: "Includes slow-motion capture, instant sharing station, and props. Great for guest interaction." }
 ];
 
 export default function Services() {

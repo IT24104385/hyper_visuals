@@ -36,8 +36,8 @@ export default function About() {
                     </div>
                     <div className="relative aspect-[4/5] bg-gray-200 overflow-hidden shadow-lg">
                         <Image
-                            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071"
-                            alt="Philosophy"
+                            src="/background/team.jpeg"
+                            alt="Team photo of Hyper Visuals"
                             fill
                             className="object-cover"
                         />
